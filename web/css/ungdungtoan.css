@@ -1,0 +1,67 @@
+body{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+#input-matran{
+    float: left;
+    width: 110px;
+    padding: 2px;
+}
+.input-matran{
+    float: left;
+    width: 110px;
+}
+.dauvao{
+    margin: 15px;
+    min-height:90vh;
+    min-width: 45vw;
+    overflow: auto;
+    
+}
+.daura{
+    min-height:90vh;
+    min-width: 40vw;
+    overflow: auto;
+   
+}
+#napmatran{
+    margin-left: auto;
+    margin-right: auto;
+}
+#hangcot{
+    margin-left: auto;
+    margin-right: auto;
+}
+.row{
+    margin: 0px;
+}
+.giai{
+    width: 200px;
+}
+#daura{
+    margin-left: auto;
+    margin-right: auto;
+}
+.ketqua-tieude{
+    margin-top: 23px;
+}
+.btn-giai{
+    width: 200px;
+}
+.luythua{
+    margin-left: 30px;
+}
+.cachtren10{
+    margin-top: 10px;
+}
+#huongdan{
+    margin: 15px;
+}
+#cach150{
+    margin-top: 150px;
+}
+.tab{
+    padding-left: 2em;
+}
