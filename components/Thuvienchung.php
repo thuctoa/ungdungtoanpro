@@ -183,6 +183,16 @@ class Thuvienchung extends Component{
         }
         return $matrancon;
     }
+    //Lấy toàn bộ ma trận con lùi dần 
+    public function toanbomatranconlui( $matran, $hang, $cot){
+        $matrancon=[];
+        for($i=0;$i<$hang;$i++){
+            for($j=0;$j<$cot;$j++){
+                $matrancon[$i][$j]=  $this->matrancon($matran, $hang, $cot, $hang -1 - $i,$cot -1- $j);
+            }
+        }
+        return $matrancon;
+    }
     //Tìm ma trận liên hợp của ma trận
     public function matranlienhop($matran, $capmatran){
         $dinhthuc=$this->dinhthucthuong($matran, $capmatran);
@@ -271,25 +281,15 @@ class Thuvienchung extends Component{
         return FALSE;
     }
     public $matranvuongconcapcao=[];
-    public $subcodau =0;
-    public $submindau=0;
-    //Lọc các ma trận vuông con lớn hơn cấp n từ ma trận đầu vào 
+    //Lọc các ma trận vuông con cấp capn từ ma trận đầu vào 
     public function matranvuongcon($matran, $hang, $cot, $capn){
-        if($this->subcodau==0){//chi lay min lan dau
-            $this->submindau=$cot;
-            if($hang<$cot){
-                $this->submindau=$hang;
-            }
-            $this->subcodau=1;
-        }
-        
         $matran =  $this->matranvuongdanhdau($matran, $hang, $cot);
         $capmatran= count($matran);
-        if($capmatran<=$this->submindau){
+        if($capmatran==$capn+1){
             array_push($this->matranvuongconcapcao, $matran);
         }    
         if($capmatran>$capn+1){
-           $matrancon =  $this->toanbomatrancon($matran, $capmatran, $capmatran);
+           $matrancon =  $this->toanbomatranconlui($matran, $capmatran, $capmatran);
            for($i=0;$i<$capmatran;$i++){
                for($j=0;$j<$capmatran;$j++){
                     $this->matranvuongcon($matrancon[$i][$j], $capmatran-1,$capmatran-1, $capn);

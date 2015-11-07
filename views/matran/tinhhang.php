@@ -11,23 +11,32 @@
     $$
 <p>Ta đi tìm một ma trận vuông con cấp cao nhất của $A$ có định thức khác  $0$ là</p>
 
-    $$
+    
     <?php
-    $a->subrank($a->caphangdequy);
-    $xuongdong=0;
-    foreach ($a->matranvuongconcapcao as $val){
-        if($Thuvienchung->matranbibienthanhvuong($val)==FALSE){
-            echo "det\\begin{Bmatrix}";
-            $Thuvienchung->hienthimatrannguyenmau($val,'pmatrix');
-            echo "\\end{Bmatrix}";
-            echo '= 0 , ';
-            $xuongdong++;
-            if($xuongdong%5 ==0){
-                echo '\\\\';
+    $min = min($hang,$cot);
+    for($i=$min-1 ; $i>=$a->caphangdequy;$i--){
+        echo '<p> Các ma trận con cấp $'.($i+1).' $ có định thức là';
+        echo '$$';
+        $a->subrank($i);
+        $xuongdong=0;
+        foreach ($a->matranvuongconcapcao as $val){
+            if($Thuvienchung->matranbibienthanhvuong($val)==FALSE){
+                echo "det\\begin{Bmatrix}";
+                $Thuvienchung->hienthimatrannguyenmau($val,'pmatrix');
+                echo "\\end{Bmatrix}";
+                echo '= 0 , ';
+                $xuongdong++;
+                if($xuongdong%4 ==0){
+                    echo '\\\\';
+                }
             }
         }
+        $a->matranvuongconcapcao=[];
+        echo '$$';
     }
     ?>
+    <p> Và ma trận con cấp <?=$i+1?> có định thức khác $0$ là </p>
+    $$
     \\
     det \begin{Bmatrix} <?=$r->hienthi('pmatrix')?> \end{Bmatrix}
     = <?=$r->det()?>
