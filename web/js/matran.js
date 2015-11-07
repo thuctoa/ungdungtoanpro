@@ -135,7 +135,39 @@ function huongdan(loaigiai){
             +loaigiai, false);
     xmlhttp.send();
 }
-function toanmanhinh(){
+function toanmanhinhdauvao(){
+    $('body').css({
+        'background-color': '#337ab7'
+    });
+    
+    $('#dauvao').css({
+        'background-color': 'white',
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        left: 0,
+        zIndex: 9002,
+        'max-width':'95vw',
+        'max-height':'90vh',
+        padding:'0px 30px',
+        'margin':'15px auto',
+        'margin-top':'0px'
+    });
+}
+function thoatmanhinhdauvao(){
+    $('body').css({
+        'background-color': 'transparent'
+    });
+    $('#dauvao').css({
+        position:'static',
+        'min-height':'90vh',
+        'min-width': '40vw',
+        'overflow': 'auto',
+        margin:'0px',
+        'background-color': 'transparent',
+    });
+}
+function toanmanhinhdaura(){
     $('body').css({
         'background-color': '#337ab7'
     });
@@ -151,17 +183,19 @@ function toanmanhinh(){
         'max-height':'90vh',
         padding:'0px 30px',
         'margin':'15px auto',
+        'margin-top':'0px'
     });
 }
-function thoatmanhinh(){
+function thoatmanhinhdaura(){
     $('body').css({
-        'background-color': 'white'
+        'background-color': 'transparent'
     });
     $('#daura').css({
-        'position':'absolute',
+        position:'static',
         'min-height':'90vh',
         'min-width': '40vw',
         'overflow': 'auto',
         margin:'0px',
+        'background-color': 'transparent',
     });
 }

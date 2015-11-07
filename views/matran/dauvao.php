@@ -1,4 +1,8 @@
-<div id="dauvao" class="dauvao">
+<div id="dauvao" class="dauvao text-center">
+    <div class="row">
+            <button id="toanmanhinh" onclick="toanmanhinhdauvao();"> <?=  Yii::t('app','Phóng to')?> </button>
+            <button id="thoatmanhinh" onclick="thoatmanhinhdauvao();"> <?=  Yii::t('app','Trung bình')?></button>
+    </div>
     <div class="row" id="hangcot">
         <div class="input-group" id="input-matran">
             <input 

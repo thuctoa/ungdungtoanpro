@@ -3,8 +3,8 @@
         <div class="col-lg-5">
         </div>
         <div class="col-lg-6">
-            <button id="toanmanhinh" onclick="toanmanhinh();"> <?=  Yii::t('app','Phóng to')?> </button>
-            <button id="thoatmanhinh" onclick="thoatmanhinh();"> <?=  Yii::t('app','Trung bình')?></button>
+            <button id="toanmanhinh" onclick="toanmanhinhdaura();"> <?=  Yii::t('app','Phóng to')?> </button>
+            <button id="thoatmanhinh" onclick="thoatmanhinhdaura();"> <?=  Yii::t('app','Trung bình')?></button>
         </div>
     </div>
     <div class="cachtren10"></div>
