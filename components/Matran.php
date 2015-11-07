@@ -14,6 +14,7 @@ use app\components\Thuvienchung;
  */
 //neu co tien to kt_ co nghia la kiem tra
 //tien to td_ co nghia la thay doi thuoc tinh cua chinh no
+//Không được đặt tên cùng với lớp cha khi dùng con trỏ $this
 class Matran extends Thuvienchung{
     public $hang;
     public $cot;
@@ -81,14 +82,22 @@ class Matran extends Thuvienchung{
         return parent::matrancon($this->matran, $this->hang, $this->cot, $hangi, $cotj);
     }
     //Rank 
-    public function rank(){
+    public function rankG(){
         return parent::hangmatran( $this->matran, $this->hang, $this->cot);
     }
-    public function rank1(){
+    public function rank(){
         if($this->kt_matran0()){
+            $this->caphangdequy=0;
+            $this->hangdequy=[];
+            $this->tonglap=0;
             return [];
         }
         return parent::hangdequy($this->matran, $this->hang, $this->cot);
+    }
+    
+    
+    public function subrank($capn){
+        parent::matranvuongcon($this->matran, $this->hang, $this->cot, $capn);
     }
 
     //Tich ma tran voi mot so
@@ -126,5 +135,7 @@ class Matran extends Thuvienchung{
     public function hienthi($kieu){
         parent::hienthimatran( $this->matran, $kieu);
     }
-    
+    public function hienthinguyenmau($kieu){
+        parent::hienthimatrannguenmau( $this->matran, $kieu);
+    }
 }

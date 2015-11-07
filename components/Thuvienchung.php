@@ -223,24 +223,81 @@ class Thuvienchung extends Component{
             return FALSE;
         }
     }
-    //Cho ra ma trận luôn vuông
+    //Cho ra ma trận luôn vuông 
     public function matranvuong($matran ,$hang ,$cot){
         if($hang < $cot){ // bù thêm những hàng có các phần tử bằng 0
             for($i=$hang; $i<$cot;$i++){
                 for($j=0;$j<$cot;$j++){
-                    $matran[$i][$j] = 0;
+                    $matran[$i][$j] = '0';
                 }
             }
         }
         if($hang > $cot){// bù thêm những cột có các phần tử bằng 0
             for($i=0; $i<$hang;$i++){
                 for($j=$cot;$j<$hang;$j++){
-                    $matran[$i][$j] = 0;
+                    $matran[$i][$j] = '0';
                 }
             }
         }
         return $matran;
     }
+    //Cho ra ma trận luôn vuông có đánh dấu 
+    public function matranvuongdanhdau($matran ,$hang ,$cot){
+        if($hang < $cot){ // bù thêm những hàng có các phần tử bằng 0
+            for($i=$hang; $i<$cot;$i++){
+                for($j=0;$j<$cot;$j++){
+                    $matran[$i][$j] = "danhdau";
+                }
+            }
+        }
+        if($hang > $cot){// bù thêm những cột có các phần tử bằng 0
+            for($i=0; $i<$hang;$i++){
+                for($j=$cot;$j<$hang;$j++){
+                    $matran[$i][$j] = "danhdau";
+                }
+            }
+        }
+        return $matran;
+    }
+    //kiem tra ma tran co bi them hang hay cot 0.000000 hay khong
+    public function matranbibienthanhvuong($matran){
+        foreach ($matran as $vali){
+            foreach($vali as $val){
+                if($val==="danhdau"){
+                    return TRUE;
+                }
+            }
+        }
+        return FALSE;
+    }
+    public $matranvuongconcapcao=[];
+    public $subcodau =0;
+    public $submindau=0;
+    //Lọc các ma trận vuông con lớn hơn cấp n từ ma trận đầu vào 
+    public function matranvuongcon($matran, $hang, $cot, $capn){
+        if($this->subcodau==0){//chi lay min lan dau
+            $this->submindau=$cot;
+            if($hang<$cot){
+                $this->submindau=$hang;
+            }
+            $this->subcodau=1;
+        }
+        
+        $matran =  $this->matranvuongdanhdau($matran, $hang, $cot);
+        $capmatran= count($matran);
+        if($capmatran<=$this->submindau){
+            array_push($this->matranvuongconcapcao, $matran);
+        }    
+        if($capmatran>$capn+1){
+           $matrancon =  $this->toanbomatrancon($matran, $capmatran, $capmatran);
+           for($i=0;$i<$capmatran;$i++){
+               for($j=0;$j<$capmatran;$j++){
+                    $this->matranvuongcon($matrancon[$i][$j], $capmatran-1,$capmatran-1, $capn);
+               }
+           }
+        }
+    }
+    
     public $caphangdequy=0;
     public $hangdequy=[];
     public $tonglap=0;
@@ -343,6 +400,29 @@ class Thuvienchung extends Component{
                     }  else {
                         
                         echo $this->sodep($val).' \\\\ ';
+                        
+                    }
+                }
+                
+            }
+            echo '\\end{'.$kieu.'}';
+        }else{
+            echo '(0)';
+        }
+    }
+    //hiển thị ma trận
+    public function hienthimatrannguyenmau($matran,$kieu){
+       
+        if($matran){
+            echo '\\begin{'.$kieu.'}';
+            foreach ($matran as $vali){
+                $lastElementKey = array_pop(array_keys($vali));//tim key cuoi cua array
+                foreach ($vali as $key=>$val){
+                    if($lastElementKey != $key){
+                        echo $val.' & ';
+                    }  else {
+                        
+                        echo $val.' \\\\ ';
                         
                     }
                 }

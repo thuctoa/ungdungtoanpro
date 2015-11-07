@@ -6,8 +6,9 @@ $$
 <?php
     $ketqua=[];
     $nghichdao=[];
-    $dinhthuc = $Thuvienchung->dinhthucthuong( $matran, $hang);
+    $dinhthuc =0;
      if($hang==$cot){
+         $dinhthuc = $Thuvienchung->dinhthucthuong( $matran, $hang);
             if($somu > 0){
                 $ketqua =  $Thuvienchung->luythuamatran($matran, $hang, $somu);
             }else if($somu == 0){
@@ -65,7 +66,7 @@ $$
                         nên không thực hiện được phép lũy thừa.')?></div>
 <?php
     }
-    if($ketqua){
+    if($ketqua&&$hang==$cot){
         if($somu<0){
 ?>
 <p> Kết quả </p> 
