@@ -14,13 +14,17 @@
     $$
     <?php
     $a->subrank($a->caphangdequy);
-    
+    $xuongdong=0;
     foreach ($a->matranvuongconcapcao as $val){
         if($Thuvienchung->matranbibienthanhvuong($val)==FALSE){
             echo "det\\begin{Bmatrix}";
             $Thuvienchung->hienthimatrannguyenmau($val,'pmatrix');
             echo "\\end{Bmatrix}";
             echo '= 0 , ';
+            $xuongdong++;
+            if($xuongdong%5 ==0){
+                echo '\\\\';
+            }
         }
     }
     ?>
