@@ -1,6 +1,7 @@
 <?php
     use app\components\Matran;
     $a= new Matran($matran, $hang, $cot);
+    if($a->kt_matran0()==FALSE){
     $a->rank();
     $r=new Matran($a->hangdequy);
         
@@ -53,3 +54,14 @@
         \end{Bmatrix}
         =<?=$a->caphangdequy?>
     $$
+    <?php
+    }else{
+    ?>
+        <p>Gọi $A$ là ma trận đầu vào vậy </p>
+        $$
+          A = <?=$a->hienthi('pmatrix')?>
+        $$
+        <p> Do $A$ là ma trận $O$ nên theo quy ước hạng của nó bằng $0$.
+    <?php
+    }
+    ?>
