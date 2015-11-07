@@ -10,7 +10,23 @@ $$
      if($hang==$cot){
          $dinhthuc = $Thuvienchung->dinhthucthuong( $matran, $hang);
             if($somu > 0){
+?>
+<p> và số mũ là <?=$somu?> </p>
+<?php
+            if($somu>2){
+                 $tongluythua2=$Thuvienchung->tongluythua2($somu);
+                    $textmu='';
+                    echo '$$ '.$somu.' = ';
+                    $sophantumu=count($tongluythua2)-1;
+                    for($i=0;$i<$sophantumu;$i++){
+                        echo $tongluythua2[$i].' + ';
+                        $textmu=$textmu.$tongluythua2[$i].' + ';
+                    }
+                    echo $tongluythua2[$i].'$$';
+                    $textmu=$textmu.$tongluythua2[$i];
+                }
                 $ketqua =  $Thuvienchung->luythuamatran($matran, $hang, $somu);
+                
             }else if($somu == 0){
 ?>
 <p>Do số mũ bằng 0 nên ta thực hiện tính định thức </p>
@@ -84,7 +100,7 @@ $$
     <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
 $$
 <?php
-        }else{ 
+        }else if($somu<=2){ 
             ?>
 <p> Kết quả </p> 
 $$ 
@@ -95,6 +111,73 @@ $$
     = 
     <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
 $$
+<?php
+        }else{
+?>
+<p>Vậy ta cần phải thực hiện bình phương liên tiếp từ $A$ đến $A^{<?=end($tongluythua2)?>}$ là </p>
+<?php
+    $lt2=1;
+    while($lt2<end($tongluythua2)){
+        
+?>  
+        $
+        A^{<?=$lt2*2?>}=(A^{<?=$lt2?>})^2
+        = 
+            <?=$Thuvienchung->hienthimatran($Thuvienchung->
+                luythuamatran($matran, $hang, $lt2 )
+                ,'pmatrix')
+            ?>^2 
+        = 
+            <?=$Thuvienchung->hienthimatran($Thuvienchung->
+                luythuamatran($matran, $hang, $lt2*2 )
+                ,'pmatrix')
+            ?>
+        $
+        $$$$
+<?php
+        $lt2 = $lt2 * 2;
+    }
+?>
+<p> Phép biến đổi là  </p> 
+$ 
+    A^{<?=$somu?>}
+    =
+    A^{<?=$textmu?>}
+    =
+    <?php
+        for($i=0;$i<$sophantumu;$i++){
+    ?>
+        A^{<?=$tongluythua2[$i]?>} \cdot
+    <?php
+        }
+    ?>
+        A^{<?=$tongluythua2[$i]?>}\\
+    =
+    <?php
+        for($i=0;$i<$sophantumu;$i++){
+    ?>
+        <?=$Thuvienchung->hienthimatran($Thuvienchung->
+                luythuamatran($matran, $hang, $tongluythua2[$i])
+                ,'pmatrix')
+            ?> \cdot
+    <?php
+        }
+    ?>
+        <?=$Thuvienchung->hienthimatran($Thuvienchung->
+                luythuamatran($matran, $hang, $tongluythua2[$i])
+                ,'pmatrix')
+            ?>\\
+    =
+    <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
+$
+<hr>
+<p> Vậy kết quả là </p> 
+
+$ 
+    A^{<?=$somu?>}
+    =
+    <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
+$
 <?php
         }
     }

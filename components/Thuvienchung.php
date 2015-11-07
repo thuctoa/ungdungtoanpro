@@ -599,7 +599,17 @@ class Thuvienchung extends Component{
         }
         return $dodai;
     }
-    
+    public function tongluythua2($x){
+        $tongluythua2=[];
+        $dodaibit=  $this->dodaibit($x);
+        for($i=0;$i<=$dodaibit;$i++){
+            if((($x>>$i)&1)==1){
+                array_push($tongluythua2, pow(2, $i));
+            }
+        }
+        return $tongluythua2;
+    }
+
     //Quy đổi số đẹp không có dạng E mà có dạng 10^, bỏ số -0 thành số 0
     public function sodep($x){
         if($x=="-0"){
