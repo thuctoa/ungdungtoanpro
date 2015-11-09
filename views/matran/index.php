@@ -79,9 +79,9 @@
                 </div>
             </div>
         </div>
-        <button 
+<!--        <button 
             class="btn btn-primary" 
             onclick="giai('test');"
-            type="button"><?php echo Yii::t('app','test');?>
-        </button>
+            type="button"><?php //echo Yii::t('app','test');?>
+        </button>-->
     </div>
