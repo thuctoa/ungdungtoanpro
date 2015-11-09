@@ -92,6 +92,7 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
             $
 <?php
         }
+        
         if($ranka<$cot){
             echo '<p> Do hạng của $A$ là $'.$ranka.''
                     . '$ nhỏ hơn số ẩn là $'.$cot.''
@@ -336,12 +337,125 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
             
 <?php
             
-        }else if($ranka == $cot){
-?>
-            <p>Mọi chuyện nằm ở đây </p>
+        }else if($ranka == $cot&&$hang!=$cot){
+            $dinhthucaphay=$Thuvienchung->dinhthucthuong($loaibohanga, $ranka);
+?>  
+            <p>Do $det(A') = det \begin{Bmatrix}
+            <?=$Thuvienchung->hienthimatran($loaibohanga,'pmatrix')?> 
+                \end{Bmatrix} = <?=$dinhthucaphay?>\ne 0$ nên tồn tại ma trận nghịch
+             đảo của $A'$ là $(A')^{-1}$ bằng </p>
+            <?php 
+                $lienhopaphay = $Thuvienchung->matranlienhop($loaibohanga, $ranka);
+                $ketqualienhopb = $Thuvienchung->nhanhaimatran(
+                        $lienhopaphay, $ranka, $ranka,
+                        $loaibohangb, $ranka , 1
+                        );
+                $ketquab = $Thuvienchung->tichsomatran(1/$dinhthucaphay, $ketqualienhopb,
+                        $ranka ,1);
+            ?>
+            $
+                (A')^{-1} = <?=$Thuvienchung->hienthimatran($loaibohanga,'pmatrix')?> ^{-1}
+                = \frac{1}{<?=$dinhthucaphay?>}\cdot <?=$Thuvienchung->hienthimatran($lienhopaphay,'pmatrix')?> 
+            $
+            <p>Vậy ta biến đổi như sau</p>
+            $
+                A'x=B' \Leftrightarrow (A')^{-1}(A'x)=(A')^{-1}(B')
+                \Leftrightarrow ((A')^{-1}A')x=(A')^{-1}B'\\
+                \Leftrightarrow x=(A')^{-1}B'
+            $
+            <p>Hay</p>
+            $
+                x = \frac{1}{<?=$dinhthucaphay?>}\cdot <?=$Thuvienchung->hienthimatran($lienhopaphay,'pmatrix')?> 
+                \cdot <?=$Thuvienchung->hienthimatran($loaibohangb, 'pmatrix')?> \\
+                = \frac{1}{<?=$dinhthucaphay?>}\cdot
+                <?=$Thuvienchung->hienthimatran($ketqualienhopb, 'pmatrix')?>
+                = <?=$Thuvienchung->hienthimatran($ketquab, 'pmatrix')?>
+            $
+            <p> Biểu diễn dưới dạng hệ </p>
+            $
+                \begin{cases}
+                    <?php
+                        for($i=0;$i<$cot;$i++){
+                            echo 'x_{'.$i.'} = '.$ketquab[$i][0].'\\\\';
+                        }
+                    ?>
+                \end{cases}
+            $
+            <hr>
+            <p>Vậy hệ phương trình có nghiệm duy nhất là </p>
+            $
+                (<?php
+                        for($i=0;$i<$cot;$i++){
+                            if($i!=$cot-1){
+                                echo $ketquab[$i][0].',\\quad';
+                            }else{
+                                echo $ketquab[$i][0];
+                            }
+                            
+                        }
+                ?>)
+            $
+            
 <?php
         }
+        else if($ranka == $cot&&$hang==$cot){
+            $dinhthuca = $Thuvienchung->dinhthucthuong($matran, $ranka);
+            $matranlienhopa=$Thuvienchung->matranlienhop($matran, $ranka);
+            $ketqualienhopb = $Thuvienchung->nhanhaimatran(
+                    $matranlienhopa, $ranka, $ranka,
+                    $matranb, $ranka, 1
+                    );
+            $ketquab = $Thuvienchung->tichsomatran(
+                    1/$dinhthuca, $ketqualienhopb, $ranka, 1
+                    );
 ?>
+            <p>Do $det(A)= det \begin{Bmatrix}
+                <?=$Thuvienchung->hienthimatran($matran, 'pmatrix')?>
+                \end{Bmatrix} = <?= $dinhthuca?> \ne 0
+                $ nên có ma trận nghịch đảo là $A^{-1}$ bằng </p>
+            $
+                A^{-1} = \frac{1}{<?=$dinhthuca?>} \cdot 
+                <?=$Thuvienchung->hienthimatran($matranlienhopa, 'pmatrix')?>
+            $
+            <p>Vậy ta có biến đổi sau </p>
+            $
+                Ax=B \Leftrightarrow A^{-1}(Ax)=A^{-1}(B)
+                \Leftrightarrow (A^{-1}A)x=A^{-1}B \\
+                \Leftrightarrow x=A^{-1}B
+                = \frac{1}{<?=$dinhthuca?>} \cdot 
+                <?=$Thuvienchung->hienthimatran($matranlienhopa, 'pmatrix')?>
+                \cdot <?=$Thuvienchung->hienthimatran($matranb, 'pmatrix')?>\\
+                = \frac{1}{<?=$dinhthuca?>} \cdot 
+                <?=$Thuvienchung->hienthimatran($ketqualienhopb, 'pmatrix')?>
+                = <?=$Thuvienchung->hienthimatran($ketquab, 'pmatrix')?>
+            $
+            <p> Biểu diễn dưới dạng hệ phương trình </p>
+            $
+            \begin{cases}
+                <?php
+                    for($i=0;$i<$cot;$i++){
+                        echo 'x_{'.$i.'} = '.$ketquab[$i][0].'\\\\';
+                    }
+                ?>
+            \end{cases}
+            $
+            <hr>
+            <p>Vậy nghiệm của hệ phương trình tìm được là </p>
+            $
+                (<?php
+                        for($i=0;$i<$cot;$i++){
+                            if($i!=$cot-1){
+                                echo $ketquab[$i][0].',\\quad';
+                            }else{
+                                echo $ketquab[$i][0];
+                            }
+                            
+                        }
+                ?>)
+            $
+<?php
+        }
+        ?>
         
 <?php
     }
