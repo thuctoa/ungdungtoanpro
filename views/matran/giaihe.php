@@ -228,7 +228,7 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
                         ]
                     );
                 }
-            ?>
+            ?>\\
             =\frac{1}{<?=$detahaiphay?> } \cdot 
                 ( <?=$Thuvienchung->hienthimatran($ketqualienhopb, 'pmatrix')?> - (
                 <?php
@@ -254,8 +254,92 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
             ?>)
             
             $
+            <p>Dạng hệ phương trình </p>
+            $
+            \begin{cases}
+                <?php
+                    $t=0;
+                    $nghiemdoclap=count($ketquax);
+                    $tt=0;
+                    $nghiemtongquat=[];
+                    $phantutongquat='';
+                    $tapnghiem=[];
+                        for($i=0;$i<$cot;$i++){
+                            if(in_array($i, $nhocota)){
+                                echo 'x_{'.$i.'} = ';
+                                if($ketquab[$t][0]!=0){
+                                    $phantutongquat=$phantutongquat.$ketquab[$t][0];
+                                    echo $ketquab[$t][0];
+                                }
+                                foreach ($ketquax as $val){
+                                    $xtam=$val['a'][$t][0]*-1;
+                                    if($xtam!=0){
+                                        if($xtam<0){
+                                            if($xtam!=-1){
+                                                $phantutongquat=$phantutongquat.$xtam;
+                                                echo $xtam;
+                                            }else{
+                                                $phantutongquat=$phantutongquat.'-';
+                                                echo '-';
+                                            }
+                                        }else{
+                                            $phantutongquat=$phantutongquat.'+';
+                                            echo '+'; 
+                                            if($xtam!=1){
+                                                $phantutongquat=$phantutongquat.$xtam;
+                                                echo $xtam;
+                                            }
+                                        }
+                                        $phantutongquat=$phantutongquat.'\\alpha_{'.$tt.'}';
+                                        echo '\\alpha_{'.$tt.'}';
+                                        $tt++;
+                                    }
+                                }
+                                $tt=0;
+                                $t++;
+                                echo '\\\\';
+                                array_push($nghiemtongquat, $phantutongquat);
+                                $phantutongquat='';
+                            }else{
+                                $phantutongquat=$phantutongquat.'\\alpha_{'.$tt.'}';
+                                array_push($nghiemtongquat, $phantutongquat);
+                                $phantutongquat='';
+                                echo 'x_{'.$i.'} = \\alpha_{'.$tt.'}\\\\';
+                                $tt++;
+                            }
+                        }
+                ?>
+            \end{cases}
+            $
+            <hr>
+            <p>Kết luận 
+                với $
+                <?php
+                    for ($i=0;$i<$nghiemdoclap;$i++){
+                        echo '\\forall \\alpha_{'.$i.'}\\in \\mathbb{R}, ';
+                    }
+                ?>
+                $
+                 thì nghiệm tìm được là một họ nghiệm có dạng 
+                $(
+                <?php
+                    foreach ($nghiemtongquat as $key=> $val){  
+                        if($key!=  count($nghiemtongquat)-1){
+                            echo $val.'\\quad , \\quad';
+                        }else{
+                            echo $val;
+                        }
+                    }
+                ?>
+                )$
+            </p>
+            
 <?php
             
+        }else if($ranka == $cot){
+?>
+            <p>Mọi chuyện nằm ở đây </p>
+<?php
         }
 ?>
         
