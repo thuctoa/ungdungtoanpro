@@ -37,6 +37,7 @@ class MatranController extends \yii\web\Controller
             'cot'=>$cot,
         ]);
     }
+    
     public function actionDaura()
     {
         $Thuvienchung=new Thuvienchung();
@@ -45,10 +46,22 @@ class MatranController extends \yii\web\Controller
         $cot='';
         $loaigiai='';
         $somu='';
+        $matranb=[];
         if(isset($_GET['hang'])&&isset($_GET['cot'])){
             $hang=$_GET['hang'];
             $cot=$_GET['cot'];
             if(isset($_GET['matran'])){
+                if(isset($_GET['matranb'])){
+                    $matranb=$_GET['matranb'];
+                    for($j=0;$j<$hang;$j++){
+                        if($matranb[$j][0]){
+                            $matranb[$j][0]=
+                                    $Thuvienchung->calculate_string($matranb[$j][0]);
+                        }  else {
+                            $matranb[$j][0]=0;
+                        }
+                    }
+                }
                 $matran=$_GET['matran'];
                 for($i=0;$i<$hang;$i++){
                     for($j=0;$j<$cot;$j++){
@@ -78,8 +91,10 @@ class MatranController extends \yii\web\Controller
             'loaigiai'=>$loaigiai,
             'somu'=>$somu,
             'Thuvienchung'=>$Thuvienchung,
+            'matranb'=>$matranb,
         ]);
     }
+    
     public function actionHuongdan(){
         $loaigiai='';
         if($_GET['loaigiai']){

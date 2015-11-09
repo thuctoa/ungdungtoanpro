@@ -138,4 +138,7 @@ class Matran extends Thuvienchung{
     public function hienthinguyenmau($kieu){
         parent::hienthimatrannguenmau( $this->matran, $kieu);
     }
+    public function nho_hienthi() {
+        parent::nho_hienthimatran($this->matran);
+    }
 }

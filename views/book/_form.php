@@ -19,9 +19,11 @@ use dosamigos\ckeditor\CKEditor;
         'preset' => 'advanced'
     ]) ?>
     <?= $form->field($model, 'user_id')->textInput()->hiddenInput()->label(FALSE); ?>
-
-    <?= $form->field($model, 'isbn')->textInput(['maxlength' => true]) ?>
-
+    <?php 
+        if($model->isbn==FALSE||Yii::$app->user->can('permission_admin')){
+            echo $form->field($model, 'isbn')->textInput(['maxlength' => true]);
+        }
+    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

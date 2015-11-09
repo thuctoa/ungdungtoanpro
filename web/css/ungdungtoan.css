@@ -9,6 +9,25 @@ body{
     width: 110px;
     padding: 2px;
 }
+#input-he{
+    float: left;
+    width: 150px;
+    padding: 2px;
+}
+#input-hecuoi{
+    float: left;
+    width: 130px;
+    padding: 2px;
+}
+
+.input-so_anso_n{
+    width: 170px;
+}
+#input-so_anso_n{
+    float: left;
+    width: 180px;
+    padding: 2px;
+}
 .input-matran{
     float: left;
     width: 110px;
@@ -65,4 +84,12 @@ body{
 }
 .tab{
     padding-left: 2em;
+}
+.daubang{
+    margin-top: 10px;
+}
+#daubang{
+    float: left;
+    width: 50px;
+    padding: 2px;
 }

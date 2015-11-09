@@ -60,7 +60,67 @@ function thaydoi(){
         document.getElementById('napmatran').style['width']=width +'px';
     }
 }
-if(document.getElementById('input-matran')){
+function thaydoihe(){
+    var hang=document.getElementById('so_n').value;
+    var cot=document.getElementById('so_an').value;
+    if(hang>0&&cot>0){
+        var matran='';
+        for(var i=0;i<hang;i++){
+            matran=matran+'<div class="row">';
+            for(var j=0;j<cot-1;j++){
+                matran = matran + '\
+                                <div class="input-group" id="input-he">\
+                                <input type="text" \
+                                class="form-control" \
+                                placeholder="a['+i+']['+j+']" \
+                                aria-describedby="basic-addon1"\
+                                name ="a_he['+i+']['+j+']"\
+                                id="a_he['+i+']['+j+']"\
+                                ><span class="input-group-addon">$x_{'+j+'} + $</span> \n\
+                                </div>';
+            }
+            matran = matran + '\
+                                <div class="input-group" id="input-hecuoi">\
+                                <input type="text" \
+                                class="form-control" \
+                                placeholder="a['+i+']['+j+']" \
+                                aria-describedby="basic-addon1"\
+                                name ="a_he['+i+']['+j+']"\
+                                id="a_he['+i+']['+j+']"\
+                                ><span class="input-group-addon">$x_{'+j+'}$</span> \n\
+                                </div>';
+            matran = matran + '\
+                                 <div class="input-group daubang" id="daubang">\
+                                 =  \
+                                </div>';
+            matran = matran + '\
+                                 <div class="input-group" id="input-hecuoi">\
+                                <input type="text" \
+                                class="form-control" \
+                                placeholder="b['+i+']" \
+                                aria-describedby="basic-addon1"\
+                                name ="b_he['+i+']"\
+                                id="b_he['+i+']"\
+                                >\n\
+                                </div>';
+            matran=matran+'</div>';
+        }
+        matran=matran+'<hr>';
+        document.getElementById('naphe').innerHTML=matran;
+        var width=(document.getElementById('input-he').offsetWidth + 2)*cot + 2*(document.getElementById('input-he').offsetWidth + 2);
+        document.getElementById('naphe').style['width']=width +'px';
+        document.getElementById('naphe').style['margin-left']= 'auto';
+        document.getElementById('naphe').style['margin-right']= 'auto';
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+}
+if(document.getElementById('input-so_anso_n')&&document.getElementById('so_anso_n')){
+    var width=(document.getElementById('input-so_anso_n').offsetWidth + 2)*3 ;
+    document.getElementById('so_anso_n').style['width']=width +'px';
+    document.getElementById('so_anso_n').style['margin-left']= 'auto';
+    document.getElementById('so_anso_n').style['margin-right']= 'auto';
+}
+if(document.getElementById('input-matran')&&document.getElementById('hangcot')){
     var width=(document.getElementById('input-matran').offsetWidth + 2)*3 ;
     document.getElementById('hangcot').style['width']=width +'px';
 }
@@ -107,6 +167,55 @@ function giai(loaigiai){
     }
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
+function giaihe(loaigiai){
+    huongdan(loaigiai);
+    var hang=document.getElementById('so_n').value;
+    var cot=document.getElementById('so_an').value;
+    if(hang>0&&cot>0){
+        var matran='';
+        for(var i=0;i<hang;i++){
+            for(var j=0;j<cot;j++){
+                matran = matran + '&matran['+i+']['+j+']=' 
+                        + document.getElementById('a_he['+i+']['+j+']').value;
+            }
+        }
+        var matranb='';
+        for(var j=0;j<hang;j++){
+            matranb = matranb + '&matranb['+j+'][0]=' 
+                    + document.getElementById('b_he['+j+']').value;
+        }
+        
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                var daura= xmlhttp.responseText;
+                if(daura){//Cắt ra một đoạn từ cụm từ daura đến footer 
+                    var start = daura.indexOf('daura');
+                    var end = daura.indexOf('footer');
+                    document.getElementById('daura').innerHTML
+                    = daura.substring(start+7,end-1);
+                }else{
+                    document.getElementById('daura').innerHTML='loi roi';
+                }
+            }
+            if(xmlhttp.status==500){
+                alert('Lỗi máy chủ không thực thi được.');
+            }
+        }
+       
+        xmlhttp.open("GET","/matran/daura.html?loaigiai="
+                +loaigiai+"&hang="+hang +"&cot=" + cot 
+                + matran + matranb, false);
+        xmlhttp.send();
+    }
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+}
 function huongdan(loaigiai){
     var xmlhttp;
     if (window.XMLHttpRequest) {
@@ -134,6 +243,21 @@ function huongdan(loaigiai){
     xmlhttp.open("GET","/matran/huongdan.html?loaigiai="
             +loaigiai, false);
     xmlhttp.send();
+}
+if(document.getElementById('lienquandenmatran')
+        &&document.getElementById('hephuongtrinh')){
+    $("#lienquandenmatran").hide();
+    $("#hephuongtrinh").hide();
+}
+function an(){
+    //document.getElementById(loaigiai).style.visibility = "hidden";
+    $("#lienquandenmatran").hide();
+    $("#hephuongtrinh").show();
+}
+function hien(){
+    //document.getElementById(loaigiai).style.visibility = "visible";
+    $("#hephuongtrinh").hide();
+    $("#lienquandenmatran").show();
 }
 function toanmanhinhdauvao(){
     $('body').css({

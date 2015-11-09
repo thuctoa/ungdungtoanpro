@@ -50,6 +50,15 @@
                 'Thuvienchung'=>$Thuvienchung,
             ]);
     }
+    if($loaigiai=='giaihe'){
+            echo $this->render('giaihe',[
+                'matran'=>$matran,
+                'hang'=> $hang,
+                'cot'=> $cot,
+                'Thuvienchung'=>$Thuvienchung,
+                'matranb'=>$matranb,
+            ]);
+    }
     ?>
     <div id="cach150"></div>
 </div>

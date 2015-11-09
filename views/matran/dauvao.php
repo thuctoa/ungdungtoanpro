@@ -3,91 +3,31 @@
             <button id="toanmanhinh" onclick="toanmanhinhdauvao();"> <?=  Yii::t('app','Phóng to')?> </button>
             <button id="thoatmanhinh" onclick="thoatmanhinhdauvao();"> <?=  Yii::t('app','Trung bình')?></button>
     </div>
-    <div class="row" id="hangcot">
-        <div class="input-group" id="input-matran">
-            <input 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="m = .." 
-                    aria-describedby="basic-addon1"
-                    name ="hang"
-                    id="hang"
-                    onchange="thaydoi()"
-            >
-        </div>
-        <div class="input-group " id="input-matran">
-            <input 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="n = .." 
-                    aria-describedby="basic-addon1"
-                    name ="cot"
-                    id="cot"
-                    onchange="thaydoi()"
-            >
-        </div>
-        <div class="input-group " id="input-matran">
-            <button 
-                class="btn btn-primary input-matran"
-                onclick="thaydoi();"
-            > 
-                <?=Yii::t('app','Mới')?>
-            </button>
-        </div>
-
+    <div id="lienquandenmatran">
+        <?php
+            echo $this->render('/matran/index');
+        ?>
+    </div>
+    <div id="hephuongtrinh" >
+        <?php
+            echo $this->render('/matran/dauvaohephuongtrinh');
+        ?>
     </div>
     <hr>
-    <div id ="napmatran"></div>
-    <div class=" text-center" id="giai">
-        <div class="row">
-            <div class="col-lg-6">
-                <button 
-                    class="btn btn-primary btn-giai"
-                    onclick="giai('dinhthuc');"
-                > 
-                    <?=Yii::t('app','Tính định thức')?>
-                </button>
-            </div>
-            <div class="col-lg-6">
-                <button 
-                    class="btn btn-primary  btn-giai"
-                    onclick="giai('nghichdao');"
-                > 
-                    <?=Yii::t('app','Ma trận nghịch đảo')?>
-                </button>
-            </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <button 
+                class="btn btn-primary" 
+                onclick="hien();"
+                type="button"><?php echo Yii::t('app','Liên quan đến ma trận');?>
+            </button>
         </div>
-        <hr>
-        <div class="row cachtren10">
-            <div class="col-lg-6">
-                <button 
-                    class="btn btn-primary  btn-giai"
-                    onclick="giai('tinhhang');"
-                > 
-                    <?=Yii::t('app','Tính hạng')?>
-                </button>
-            </div>
-            <div class="col-lg-6">
-                <div class="input-group  btn-giai luythua"  >
-                    <span class="input-group-btn">
-                      <button 
-                            class="btn btn-primary" 
-                            onclick="giai('luythua');"
-                            type="button"><?=Yii::t('app','Lũy thừa')?>
-                      </button>
-                    </span>
-                    <input type="text" 
-                           class="form-control" 
-                           placeholder="<?=Yii::t('app','Số mũ')?> = .."
-                           id="somu"
-                    >
-                </div>
-            </div>
+        <div class="col-lg-6">
+            <button 
+                class="btn btn-primary" 
+                onclick="an();"
+                type="button"><?php echo Yii::t('app','Hệ phương trình');?>
+            </button>
         </div>
-<!--        <button 
-            class="btn btn-primary" 
-            onclick="giai('test');"
-            type="button"><?php //echo Yii::t('app','test');?>
-        </button>-->
     </div>
 </div>
