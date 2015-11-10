@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 return [
+    'Xem đáp án'=>'View result',
+    'Xem lời giải'=>'View solve',
     'Nhân đa thức'=>'Polynomial multiplication',
     'Chia đa thức' => 'Polynomial division',
     'Chào mừng'=> 'Welcome'  ,
@@ -73,10 +75,11 @@ return [
     'Hạng'=>'Rank' ,
     'Lũy thừa'=>'Power',
     'Nghịch đảo'=>'Inverse',
-    'Giải hệ phương trình'=>'Solver equations',
-    'Giải phương trình'=>'Solver equation',
+    'Giải hệ phương trình'=>'Solve equations',
+    'Giải phương trình'=>'Solve equation',
     'Số mũ'=>'Index number',
     'Loại bài viết' => 'Type book',
     'Lưu PDF' =>'Save PDF',
     'In' => 'Print',
+    'Giải toán trực tuyến'=>'Solve mathematics online',
 ];

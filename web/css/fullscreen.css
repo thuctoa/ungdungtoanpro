@@ -3,7 +3,7 @@
   text-align: right;
 }
 .panel-actions a {
-  color:#333;
+  color: white;
 }
 .panel-fullscreen {
     display: block;
@@ -16,4 +16,7 @@
     left: 0;
     bottom: 0;
     overflow: auto;
+}
+#panel-heading{
+    background-color: #2d2d2d;
 }

@@ -29,7 +29,7 @@ AppAsset::register($this);
     <div class="wrap">
          <?php
            NavBar::begin([
-                'brandLabel' => Html::img('/img/logo-nav.png'),//Yii::t('app','Ứng dụng toán'),
+                'brandLabel' => Html::img('/img/logo-nav.png'),
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'breadcrumb ',
@@ -58,18 +58,19 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-<!--        <div  id="language-selector" class="pull-right" style="position: relative; top: 0px;">
-            <?php //echo \app\components\widgets\LanguageSelector::widget(); ?>
-        </div>-->
         <?= $content ?> 
     </div>
     
     <footer class="footer">
+        <div  id="language-selector" class="pull-right" style="position: relative; margin-top: -10px;">
+            <?php echo \app\components\widgets\LanguageSelector::widget(); ?>
+        </div>
         <div class="container">
-            <p class="pull-left">&copy; Ứng dụng toán <?= date('Y') ?></p>
-            <p class="pull-right"><?=Yii::t('app','Tác giả')?>: Nguyễn Thế Thức - 
+           
+            <a href="/" class="pull-left text-primary ">&copy; Ứng dụng toán <?= date('Y') ?></a>
+            <a href="/site/contact.html" class="pull-right text-primary"><?=Yii::t('app','Tác giả')?>: Nguyễn Thế Thức - 
                 <?=Yii::t('app','Địa chỉ Email')?>: thucfami@gmail.com - 
-                <?=Yii::t('app','Số điện thoại')?>: 0979 846 286</p>
+                <?=Yii::t('app','Số điện thoại')?>: 0979 846 286&nbsp;&nbsp;&nbsp;</a>
         </div>
     </footer>
 

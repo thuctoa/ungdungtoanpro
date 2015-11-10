@@ -1,14 +1,14 @@
 .toan-bo-trang{
-    //background: url(../img/background.png);
-    height: 100vh;
+    //background: url(../img/background.jpg);
+    height: 100%;
 }
-
 .panel-body{
+    
     height: 45vh;
     overflow: auto;
 }
 #ly-thuyet{
-   // background: url(../img/background.png);
+    
     height: 30vh;
     overflow: auto;
 }
@@ -19,24 +19,71 @@
 }
 .panel-heading {
     padding: 2px;
+    border-bottom: 0px;
 }
 .dinh-khung{
     padding: 2px;
 }
 .breadcrumb{
-    height: 80px;
+    height: 70px;
 }
 .navbar-brand{
-    padding: 20px;
+    padding: 0px;
 }
 .navbar-brand>img{
-    
-    margin-left: -65px;
+    margin-top: 5px;
+    margin-left: 0px;
 }
 #noi-dung-dau-vao{
+    //background: white;
+    border: 1px solid #ddd;
+    height: 100%;
+}
+#noi-dung-dau-ra{
+    //background: white;
     border: 1px solid #ddd;
     height: 100%;
 }
 .btn-toolbar{
-    padding: 10px 15px;
+    padding: 10px 15px 10px 15px;
+}
+.giaitoantructuyen{
+    color: #dd4b39;
+    height: 29px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 29px;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 20px;
+}
+.footer{
+    position:fixed;
+    padding: 0 28px;
+    background-color:#f1f1f1;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    border-top:1px solid #ddd ;
+    padding-top: 12px; 
+    padding-bottom:  5px; 
+}
+.container{
+    width: 100%;
+}
+.ly-thuyet-thuat-toan{
+    margin-bottom: 50px;
+}
+#dau-vao{
+    padding: 0px 15px; 
+}
+#dau-ra{
+    padding: 0px 15px; 
+    //border: 1px solid #ddd;
+}
+.nut-ma-tran{
+    margin-left: 0px;
+}
+.btn-toolbar > .btn-group{
+    margin-left: 0px;
 }
