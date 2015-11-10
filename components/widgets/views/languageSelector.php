@@ -30,12 +30,21 @@
                 }
 		else
 		{
-                    echo Html::dropDownList('_lang', $currentLang, $languages,
-                        array(
-                            'onchange' => 'language_change(this)',
-                            'csrf'=>true,
-                        )
-                    ); 
+        ?>
+        <button type="button"  class="btn btn-default btn-sm" onclick="language_change('vi')">
+            <span class="lang-xs lang-lbl" lang="vi"></span> 
+        </button>
+        <button type="button"  class="btn btn-default btn-sm" onclick="language_change('en')">
+            <span class="lang-xs lang-lbl" lang="en"></span> 
+        </button>
+    
+        <?php
+//                    echo Html::dropDownList('_lang', $currentLang, $languages,
+//                        array(
+//                            'onchange' => 'language_change(this)',
+//                            'csrf'=>true,
+//                        )
+//                    ); 
 		}
         ?>
         <script type="text/javascript">
@@ -44,7 +53,7 @@
             <?php echo '$.ajax(\''.Yii::$app->getUrlManager()->createUrl("site/language")."',".PHP_EOL; 
                     echo "{'type':'post',".PHP_EOL;
                     echo "success : function(data) {window.location.reload();},".PHP_EOL;
-                    echo "'data':'_lang='+selected.value+'&YII_CSRF_TOKEN=".Yii::$app->request->csrfToken."',";
+                    echo "'data':'_lang='+selected+'&YII_CSRF_TOKEN=".Yii::$app->request->csrfToken."',";
             ?>
             }
             );

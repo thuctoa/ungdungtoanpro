@@ -61,4 +61,12 @@ return [
     'Our fields' => 'Các lĩnh vực của chúng tôi',
     'Heading here' => 'Tiêu đề ở đây',
     'Description goes here' => 'Tóm tắt ở đây',
+    'Phone number'=>'Số điện thoại',
+    'Equations'=>'Hệ phương trình',
+    'Equation'=>'Phương trình',
+    'Matrix' => 'Ma trận',
+    'Polynomial'=>'Đa thức',
+    'Determinant'=>'Định thức',
+    'Rank'=>'Hạng',
+    
 ];

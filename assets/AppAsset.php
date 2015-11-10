@@ -25,6 +25,7 @@ class AppAsset extends AssetBundle
         'css/ungdungtoan.css',
         'css/khungchinh.css',
         'css/fullscreen.css',
+        'css/languages.min.css'
     ];
     public $js = [
         'js/MathJax.js?config=TeX-AMS-MML_HTMLorMML',

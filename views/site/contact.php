@@ -7,7 +7,7 @@ use yii\captcha\Captcha;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\ContactForm */
 
-$this->title = Yii::t('app','Contact');
+$this->title = Yii::t('app','Liên lạc');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
     <div class="alert alert-success">
-        <?=Yii::t('app','Thank you for contacting us. We will respond to you as soon as possible.')?>
+        <?=Yii::t('app','Cảm ơn bạn đã liên lạc cho chúng tôi. Chúng tôi sẽ phản hồi tới bạn sớm nhất có thể.')?>
     </div>
 
     <p>
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php else: ?>
 
     <p>
-        <?=Yii::t('app','If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.')?>
+        <?=Yii::t('app','Nếu bạn có các góp ý, vui lòng điền vào các lĩnh vực trong form liên lạc của chúng tôi. Cảm ơn.')?>
         
     </p>
 
@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
                 ]) ?>
                 <div class="form-group">
-                    <?= Html::submitButton(Yii::t('app','Contact'), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                    <?= Html::submitButton(Yii::t('app','Liên lạc'), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
         </div>

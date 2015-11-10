@@ -10,14 +10,14 @@ $(document).ready(function () {
             $('#dau-vao').css('height', '90vh');
             $this.children('i').removeClass('glyphicon-resize-full');
             $this.children('i').addClass('glyphicon-resize-small');
-            $this.children('i').attr('title', 'Tắt chế độ toàn màn hình của đề bài');
+           // $this.children('i').attr('title', 'Tắt chế độ toàn màn hình của đề bài');
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
         {
             $('#dau-vao').css('height', '45vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
-            $this.children('i').attr('title', 'Bật chế độ toàn màn hình của đề bài');
+            //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của đề bài');
         }
         $(this).closest('.panel').toggleClass('panel-fullscreen');
     });
@@ -31,14 +31,14 @@ $(document).ready(function () {
             $('#dau-ra').css('height', '90vh');
             $this.children('i').removeClass('glyphicon-resize-full');
             $this.children('i').addClass('glyphicon-resize-small');
-            $this.children('i').attr('title', 'Tắt chế độ toàn màn hình của lời giải');
+           // $this.children('i').attr('title', 'Tắt chế độ toàn màn hình của lời giải');
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
         {
             $('#dau-ra').css('height', '45vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
-            $this.children('i').attr('title', 'Bật chế độ toàn màn hình của lời giải');
+            //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của lời giải');
         }
         $(this).closest('.panel').toggleClass('panel-fullscreen');
     });
@@ -52,14 +52,14 @@ $(document).ready(function () {
             $('#thuat-toan').css('height', '90vh');
             $this.children('i').removeClass('glyphicon-resize-full');
             $this.children('i').addClass('glyphicon-resize-small');
-            $this.children('i').attr('title', 'Tắt chế độ toàn màn hình của thuật toán');
+           // $this.children('i').attr('title', 'Tắt chế độ toàn màn hình của thuật toán');
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
         {
             $('#thuat-toan').css('height', '30vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
-            $this.children('i').attr('title', 'Bật chế độ toàn màn hình của thuật toán');
+            //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của thuật toán');
         }
         $(this).closest('.panel').toggleClass('panel-fullscreen');
     });
@@ -73,7 +73,7 @@ $(document).ready(function () {
             $('#ly-thuyet').css('height', '90vh');
             $this.children('i').removeClass('glyphicon-resize-full');
             $this.children('i').addClass('glyphicon-resize-small');
-            $this.children('i').attr('title', 'Tắt chế độ toàn màn hình của lý thuyết');
+            //$this.children('i').attr('title', 'Tắt chế độ toàn màn hình của lý thuyết');
             
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
@@ -81,9 +81,35 @@ $(document).ready(function () {
             $('#ly-thuyet').css('height', '30vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
-            $this.children('i').attr('title', 'Bật chế độ toàn màn hình của lý thuyết');
+            //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của lý thuyết');
         }
         $(this).closest('.panel').toggleClass('panel-fullscreen');
     });
-    
+    // Ẩn hết tất cả các thẻ ban đầu
+    for(var i=0;i<4;i++){
+            chonloaian(i);
+    }
 });
+function chonloaigiai(so){
+    for(var i=0;i<4;i++){
+        if(i!=so){
+            chonloaian(i);
+        }
+        
+    }
+    chonloaihien(so);
+}
+function chonloaian(so){
+    var divs = document.getElementsByClassName('chon-loai-'+so);
+    for(var j=0;j<divs.length;j++) {
+        divs[j].style.visibility="hidden";
+        divs[j].style.display = "none";
+    }
+}
+function chonloaihien(so){
+    var divs = document.getElementsByClassName('chon-loai-'+so);
+    for(var j=0;j<divs.length;j++) {
+        divs[j].style.visibility="visible";
+        divs[j].style.display = "block";
+    }
+}

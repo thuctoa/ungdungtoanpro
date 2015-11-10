@@ -37,11 +37,11 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => Yii::t('app','Verification Code'),
-            'name' => Yii::t('app','Name'),
-            'email' => Yii::t('app','Email address'),
-            'subject' => Yii::t('app','Subject'),
-            'body' => Yii::t('app','Body'),
+            'verifyCode' => Yii::t('app','Mã xác thực'),
+            'name' => Yii::t('app','Tên'),
+            'email' => Yii::t('app','Địa chỉ Email'),
+            'subject' => Yii::t('app','Chủ đề'),
+            'body' => Yii::t('app','Nội dung'),
         ];
     }
 

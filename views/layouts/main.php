@@ -38,32 +38,38 @@ AppAsset::register($this);
             
             $items = [
                   //  ['label' => Yii::t('app','About'), 'url' => ['/site/about']],
-                    ['label' => 'Góp ý', 'url' => ['/site/contact']],
+                    ['label' => Yii::t('app','Liên lạc'), 'url' => ['/site/contact']],
                    // ['label' => Yii::t('app','Books'), 'url' => ['/book/index']],
                    //  ['label' => Yii::t('app','Authors'), 'url' => ['/author/index']],
                     Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app','Login'), 'url' => ['/site/login']] :
-                        ['label' => Yii::t('app','Logout').' (' . Yii::$app->user->identity->username . ')',
+                        ['label' => Yii::t('app','Đặng nhập'), 'url' => ['/site/login']] :
+                        ['label' => Yii::t('app','Đăng xuất').' (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ];
             if(Yii::$app->user->isGuest){
-                $items[] = ['label' => Yii::t('app','Signup'), 'url' => ['/site/signup']];
+                $items[] = ['label' => Yii::t('app','Đăng ký'), 'url' => ['/site/signup']];
             }
             if ( Yii::$app->user->can('permission_admin') )
-                $items[] = ['label' => Yii::t('app','Permissions'), 'url' => ['/admin/assignment']];
+                $items[] = ['label' => Yii::t('app','Phân quyền'), 'url' => ['/admin/assignment']];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $items,
             ]);
             NavBar::end();
         ?>
+        <div  id="language-selector" class="pull-right" style="position: relative; top: 0px;">
+            <?= \app\components\widgets\LanguageSelector::widget(); ?>
+        </div>
         <?= $content ?> 
     </div>
+    
     <footer class="footer">
         <div class="container">
             <p class="pull-left">&copy; Ứng dụng toán <?= date('Y') ?></p>
-            <p class="pull-right">Tác giả: Nguyễn Thế Thức - Địa chỉ email: thucfami@gmail.com - Số điện thoại: 0979 846 286</p>
+            <p class="pull-right"><?=Yii::t('app','Tác giả')?>: Nguyễn Thế Thức - 
+                <?=Yii::t('app','Địa chỉ Email')?>: thucfami@gmail.com - 
+                <?=Yii::t('app','Số điện thoại')?>: 0979 846 286</p>
         </div>
     </footer>
 
