@@ -55,6 +55,9 @@ class SiteController extends Controller
             ],
         ];
     }
+    public function actionDesign(){
+        return $this->render('design');
+    }
 
     public function actionIndex()
     {

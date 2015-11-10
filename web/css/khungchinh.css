@@ -1,0 +1,42 @@
+.toan-bo-trang{
+    //background: url(../img/background.png);
+    height: 100vh;
+}
+
+.panel-body{
+    height: 45vh;
+    overflow: auto;
+}
+#ly-thuyet{
+   // background: url(../img/background.png);
+    height: 30vh;
+    overflow: auto;
+}
+#thuat-toan{
+   // background: url(../img/background.png);
+    height: 30vh;
+    overflow: auto;
+}
+.panel-heading {
+    padding: 2px;
+}
+.dinh-khung{
+    padding: 2px;
+}
+.breadcrumb{
+    height: 80px;
+}
+.navbar-brand{
+    padding: 20px;
+}
+.navbar-brand>img{
+    
+    margin-left: -65px;
+}
+#noi-dung-dau-vao{
+    border: 1px solid #ddd;
+    height: 100%;
+}
+.btn-toolbar{
+    padding: 10px 15px;
+}

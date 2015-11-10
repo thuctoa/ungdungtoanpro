@@ -23,12 +23,14 @@ class AppAsset extends AssetBundle
         'css/webvowl.app.css',
         'css/webvowl.css',
         'css/ungdungtoan.css',
+        'css/khungchinh.css',
+        'css/fullscreen.css',
     ];
     public $js = [
         'js/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
         'js/matran.js',
         'js/latexit.js',
-       // 'js/application.js',
+        'js/fullscreen.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

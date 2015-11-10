@@ -27,12 +27,9 @@ AppAsset::register($this);
 
 <?php $this->beginBody() ?>
     <div class="wrap">
-        <?= $content ?> 
-    </div>
-    <footer class="footer">
-        <?php
+         <?php
            NavBar::begin([
-                'brandLabel' => Yii::t('app','Ứng dụng toán'),// "<img class='img-circle img-responsive logo' width='50' src='" . Yii::$app->request->baseUrl . "/img/logo"  . ".png' alt='Image Missing'>",
+                'brandLabel' => Html::img('/img/logo-nav.png'),//Yii::t('app','Ứng dụng toán'),
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'breadcrumb ',
@@ -55,13 +52,19 @@ AppAsset::register($this);
             }
             if ( Yii::$app->user->can('permission_admin') )
                 $items[] = ['label' => Yii::t('app','Permissions'), 'url' => ['/admin/assignment']];
-            
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $items,
             ]);
             NavBar::end();
         ?>
+        <?= $content ?> 
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-left">&copy; Ứng dụng toán <?= date('Y') ?></p>
+            <p class="pull-right">Tác giả: Nguyễn Thế Thức - Địa chỉ email: thucfami@gmail.com - Số điện thoại: 0979 846 286</p>
+        </div>
     </footer>
 
 <?php $this->endBody() ?>
