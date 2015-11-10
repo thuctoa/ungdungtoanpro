@@ -58,9 +58,9 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-        <div  id="language-selector" class="pull-right" style="position: relative; top: 0px;">
-            <?= \app\components\widgets\LanguageSelector::widget(); ?>
-        </div>
+<!--        <div  id="language-selector" class="pull-right" style="position: relative; top: 0px;">
+            <?php //echo \app\components\widgets\LanguageSelector::widget(); ?>
+        </div>-->
         <?= $content ?> 
     </div>
     
