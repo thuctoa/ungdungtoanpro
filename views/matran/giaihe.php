@@ -29,6 +29,9 @@ use app\components\Matran;
     $nhohangc=$Thuvienchung->nho_lochang($rc);
     $nhocotc=$Thuvienchung->nho_loccot($rc);
     $rankc=count($rc);
+    $loaibohanga=[];
+    $loaibocota=[];
+    $loaibohangb=[];
 ?>
 <p>Viết dưới dạng ma trận là $Ax=B$ trong đó</p>
 $
@@ -106,6 +109,10 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
             }
             echo '  sang bên vế phải của hệ '
                     . 'ta thu được dạng $A\'\' x\'\' = B\'\'$ trong đó ';
+            if(!isset($loaibohanga[0][0])){
+                $loaibohanga=$matran;
+            }
+            
             $loaibocota=$Thuvienchung->loaibocot($loaibohanga, $nhocota);
             
             $xchuyen=[];
@@ -135,6 +142,11 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
                         }
                     ?>
                 \end{pmatrix},
+                <?php
+                    if(!isset($loaibohangb[0][0])){
+                        $loaibohangb=$matranb;
+                    }
+                ?>
                 B'' = <?=$Thuvienchung->hienthimatran($loaibohangb, 'pmatrix')?> - (
                 <?php
                     foreach ($xchuyen as $val){
