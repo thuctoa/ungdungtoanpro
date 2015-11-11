@@ -25,11 +25,12 @@
     border: 1px solid #3079ed;
     color: #fff;
     cursor: default;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
     border-radius: 0px;
+    padding: 0px;
 }
 .panel{
     border-radius: 0px;

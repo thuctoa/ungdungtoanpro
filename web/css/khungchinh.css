@@ -13,24 +13,18 @@ body{
     background-color: transparent;
 }
 .panel-body{
-    
-    height: 45vh;
+    height: 50vh;
     overflow: auto;
 }
 #ly-thuyet{
-    
-    height: 30vh;
+    height: 55vh;
     overflow: auto;
 }
 #thuat-toan{
-   // background: url(../img/background.png);
-    height: 30vh;
+    height: 55vh;
     overflow: auto;
 }
-.panel-heading {
-    padding: 2px;
-    border-bottom: 0px;
-}
+
 .dinh-khung{
     padding: 2px;
 }
@@ -55,6 +49,7 @@ body{
     height: 100%;
     box-sizing: border-box;
     background: white;
+    overflow: auto;
 }
 #noi-dung-dau-vao:hover{
     //background: white;
@@ -101,7 +96,7 @@ body{
     margin-bottom: 50px;
 }
 #dau-vao{
-    padding: 0px 15px; 
+    padding: 0px; 
 }
 #dau-ra{
     padding: 0px 15px; 
@@ -164,6 +159,9 @@ button{
 .form-control{
     height: 28px;
 }
+.input-group-addon{
+    padding: 0px 12px;
+}
 
 .btn-toolbar >button:hover, .btn-group>button:hover,.btn-luy-thua:hover{
     border: 1px solid;
@@ -180,5 +178,10 @@ button{
     background: transparent !important;
 }
 .nut-giai{
-    border-color: red!important;
+    background-color: #fff !important;
+    border-color: #4d90fe!important;
+}
+#daubang{
+    margin-top: 5px;
+    width: 50px;
 }

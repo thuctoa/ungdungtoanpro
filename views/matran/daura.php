@@ -1,12 +1,12 @@
 <div class="daura">
-    <div class="row">
+<!--    <div class="row">
         <div class="col-lg-5">
         </div>
         <div class="col-lg-6">
             <button id="toanmanhinh" onclick="toanmanhinhdaura();"> <?=  Yii::t('app','Phóng to')?> </button>
             <button id="thoatmanhinh" onclick="thoatmanhinhdaura();"> <?=  Yii::t('app','Trung bình')?></button>
         </div>
-    </div>
+    </div>-->
     <div class="cachtren10"></div>
     <?php
     if($loaigiai=='nghichdao'){

@@ -14,7 +14,7 @@ $(document).ready(function () {
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
         {
-            $('#dau-vao').css('height', '45vh');
+            $('#dau-vao').css('height', '50vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
             //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của đề bài');
@@ -35,7 +35,7 @@ $(document).ready(function () {
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
         {
-            $('#dau-ra').css('height', '45vh');
+            $('#dau-ra').css('height', '50vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
             //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của lời giải');
@@ -56,7 +56,7 @@ $(document).ready(function () {
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
         {
-            $('#thuat-toan').css('height', '30vh');
+            $('#thuat-toan').css('height', '55vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
             //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của thuật toán');
@@ -78,7 +78,7 @@ $(document).ready(function () {
         }
         else if ($this.children('i').hasClass('glyphicon-resize-small'))
         {
-            $('#ly-thuyet').css('height', '30vh');
+            $('#ly-thuyet').css('height', '55vh');
             $this.children('i').removeClass('glyphicon-resize-small');
             $this.children('i').addClass('glyphicon-resize-full');
             //$this.children('i').attr('title', 'Bật chế độ toàn màn hình của lý thuyết');
@@ -91,12 +91,14 @@ $(document).ready(function () {
     }
 });
 function chonloaigiai(so){
+    
     for(var i=0;i<4;i++){
         if(i!=so){
             chonloaian(i);
         }
         
     }
+    chonloaian(100);
     chonloaihien(so);
 }
 function chonloaian(so){

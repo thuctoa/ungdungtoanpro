@@ -18,93 +18,170 @@
                     <button type="button" class="btn btn-default" onclick="chonloaigiai('1')">
                         <?=Yii::t('app','Hệ phương trình')?>
                     </button>
-                    <button type="button" class="btn btn-default" onclick="chonloaigiai('0')">
-                        <?=Yii::t('app','Ma trận')?>
-                    </button>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?=Yii::t('app','Ma trận')?>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li onclick="chonloaigiai('0')" >
+                                <a >
+                                     <?=Yii::t('app','Định thức')?>  
+                                </a>
+                          </li>
+                          <li onclick="chonloaigiai('2')">
+                                <a >
+                                    <?=Yii::t('app','Hạng')?>   
+                                </a>
+                          </li>
+                          <li  onclick="chonloaigiai('3')">
+                                <a >
+                                    <?=Yii::t('app','Nghịch đảo')?>
+                                </a>
+                                
+                          </li>
+                          <li>
+                                <a >
+                                    <?=Yii::t('app','Lũy thừa')?>
+                                </a>
+                          </li>
+                        </ul>
+                    </div>
                     <button type="button" class="btn btn-default" onclick="chonloaigiai('2')" >
                         <?=Yii::t('app','Phương trình')?>
                     </button>
-                    <button type="button" class="btn btn-default " onclick="chonloaigiai('3')">
-                        <?=Yii::t('app','Đa thức')?> 
-                    </button>
-                    
+                     <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?=Yii::t('app','Đa thức')?> 
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li onclick="chonloaigiai('3')">
+                                <a >
+                                    <?=Yii::t('app','Nhân đa thức')?>   
+                                </a>
+                          </li>
+                          <li>
+                                <a >
+                                    <?=Yii::t('app','Chia đa thức')?>  
+                                </a>
+                          </li>
+                          <li>
+                                <a >
+                                     <?=Yii::t('app','Lũy thừa')?> 
+                                </a>
+                                
+                          </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="panel-body" id="dau-vao" >
                     <div id="noi-dung-dau-vao">
-                        <div class="chon-loai-0">
-                            loại 0
-                        </div>
-                        <div class="chon-loai-1">
-                            loại 1
-                        </div>
-                        <div class="chon-loai-2">
-                            loại 2
-                        </div>
-                        <div class="chon-loai-3">
-                            loại 3
-                        </div>
+                        <i>
+                            <h2 class="text-center">
+                                <div class="chon-loai-0">
+                                        <?=Yii::t('app','Tính định thức ma trận')?>
+                                </div>
+                                <div class="chon-loai-1"> 
+
+                                        <?=Yii::t('app','Giải hệ phương trình')?>
+                                </div>
+                                <div class="chon-loai-2">
+                                    <?=Yii::t('app','Tính hạng của ma trận')?>
+                                </div>
+                                <div class="chon-loai-3">
+                                    <?=Yii::t('app','Tìm ma trận nghịch đảo')?>
+                                </div>
+                            </h2>
+                        </i>
+                        <hr>
+                        <div id="noi-dung-dau-vao-chen">
                         
+                        </div>
                     </div>
+                    
                 </div>
                 <div class="btn-toolbar nut-ma-tran" role="toolbar" aria-label="...">
                      
-                    <div class="chon-loai-0">
-                        <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default ">
-                                <?=Yii::t('app','Định thức')?>  
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <?=Yii::t('app','Hạng')?> 
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <?=Yii::t('app','Nghịch đảo')?>
-                            </button>
-                        </div>
+                    <div class="chon-loai-0 chon-loai-2 chon-loai-3">
                         <div class="input-group" style="width: 200px;">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-luy-thua" type="button">
-                                    <?=Yii::t('app','Lũy thừa')?> 
-                                </button>
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <?=Yii::t('app','Số hàng')?>
                             </span>
-                            <input type="text" class="form-control" placeholder="<?=Yii::t('app','Số mũ')?> = ...">
+                            <input type="text" class="form-control" 
+                                   onchange="thay_doi();"
+                                   id="hang" placeholder="m = ...">
                         </div><!-- /input-group -->
+                        <div class="input-group" style="width: 150px;">
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <?=Yii::t('app','Số cột')?>
+                            </span>
+                            <input type="text" class="form-control" 
+                                   onchange="thay_doi();"
+                                   id="cot" placeholder="n = ...">
+                        </div><!-- /input-group -->
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default"
+                                    onclick="thay_doi();"
+                                    title="<?=Yii::t('app','Mới')?>">
+                                <?=Yii::t('app','Mới')?><i class="glyphicon glyphicon-flash"></i>
+                            </button> 
+                        </div>
                     </div>
                     <div class="btn-group  chon-loai-1 nut-ma-tran" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default ">
-                            <?=Yii::t('app','Giải hệ phương trình')?> 
-                        </button>
-                    </div>
-                    <div class="btn-group chon-loai-2 nut-ma-tran" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default ">
-                            <?=Yii::t('app','Giải phương trình')?> 
-                        </button>
-                    </div>
-                    <div class="chon-loai-3" >
-                        <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">
-                                <?=Yii::t('app','Nhân đa thức')?>  
-                            </button>
-                     
-                            <button type="button" class="btn btn-default">
-                                <?=Yii::t('app','Chia đa thức')?>
-                            </button>
-                        </div>
                         <div class="input-group" style="width: 200px;">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-luy-thua" type="button">
-                                    <?=Yii::t('app','Lũy thừa')?> 
-                                </button>
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <?=Yii::t('app','Số phương trình')?>
                             </span>
-                            <input type="text" class="form-control" placeholder="<?=Yii::t('app','Số mũ')?> = ...">
+                            <input type="text" class="form-control" 
+                                   onchange="thay_doi_he();"
+                                   id="so_m" placeholder="m = ...">
                         </div><!-- /input-group -->
+                        <div class="input-group" style="width: 150px;">
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <?=Yii::t('app','Số ẩn')?>
+                            </span>
+                            <input type="text" class="form-control" 
+                                   onchange="thay_doi_he();"
+                                   id="so_n" placeholder="n = ...">
+                        </div><!-- /input-group -->
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default"
+                                    onclick="thay_doi_he();"
+                                    title="<?=Yii::t('app','Mới')?>">
+                                <?=Yii::t('app','Mới')?><i class="glyphicon glyphicon-flash"></i>
+                            </button> 
+                        </div>
                     </div>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default" title="<?=Yii::t('app','Mới')?>">
-                            <?=Yii::t('app','Mới')?><i class="glyphicon glyphicon-flash"></i>
-                        </button> 
-                    </div>
+                    
                     <div class="btn-group  pull-right" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default nut-giai " title="<?=Yii::t('app','Giải')?>">
+                        <button type="button" 
+                                onclick="giai_he('giaihe');"
+                                class="btn btn-default nut-giai chon-loai-1" 
+                                title="<?=Yii::t('app','Giải')?>">
+                            <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                        <button type="button" 
+                                onclick="giai_matran('dinhthuc');"
+                                class="btn btn-default nut-giai chon-loai-0" 
+                                title="<?=Yii::t('app','Giải')?>">
+                            <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                        <button type="button" 
+                                onclick="giai_matran('tinhhang');"
+                                class="btn btn-default nut-giai chon-loai-2" 
+                                title="<?=Yii::t('app','Giải')?>">
+                            <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                        <button type="button" 
+                                onclick="giai_matran('nghichdao');"
+                                class="btn btn-default nut-giai chon-loai-3" 
+                                title="<?=Yii::t('app','Giải')?>">
+                            <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                        <button type="button" 
+                                class="btn btn-default nut-giai chon-loai-100" 
+                                title="<?=Yii::t('app','Giải')?>">
                             <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
                         </button>
                     </div>
@@ -136,15 +213,15 @@
                 <div class="btn-toolbar " role="toolbar" aria-label="...">
                     <div class="btn-group pull-right" role="group" aria-label="...">
                         <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
-                        <i class="glyphicon glyphicon-floppy-save"></i>
-                    </button>
+                            <i class="glyphicon glyphicon-floppy-save"></i>
+                        </button>
                     <div class="btn-group pull-right" role="group" aria-label="...">
                         <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
-                        <i class="glyphicon glyphicon-print"></i>
-                    </button> 
+                            <i class="glyphicon glyphicon-print"></i>
+                        </button> 
+                    </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
     
@@ -161,8 +238,18 @@
                         <li><a href="#" id="thuat-toan-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
+                <div class="btn-toolbar" role="toolbar" aria-label="...">
+                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
+                        <i class="glyphicon glyphicon-floppy-save"></i>
+                    </button>
+                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
+                        <i class="glyphicon glyphicon-print"></i>
+                    </button> 
+                </div>
                 <div class="panel-body" id="thuat-toan">
-                  
+                    <div id="huongdan">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,6 +262,14 @@
                         </p>
                         <li><a href="#" id="ly-thuyet-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
+                </div>
+                <div class="btn-toolbar" role="toolbar" aria-label="...">
+                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
+                        <i class="glyphicon glyphicon-floppy-save"></i>
+                    </button>
+                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
+                        <i class="glyphicon glyphicon-print"></i>
+                    </button> 
                 </div>
                 <div class="panel-body" id="ly-thuyet">
                    

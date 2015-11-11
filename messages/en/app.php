@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 return [
+    'Số phương trình'=>'Numva',
+    'Số ẩn'=>'NumAv',
     'Mới'=>'New',
     'Giải'=>'Solve',
     'Kết quả'=>'Result',
