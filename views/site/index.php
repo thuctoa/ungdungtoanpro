@@ -248,6 +248,31 @@
     
     
     <div class="row ly-thuyet-thuat-toan">
+        <div class="col-lg-6 dinh-khung ">
+            <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
+                <div class="panel-heading" id="panel-heading" >
+                    <ul class="list-inline panel-actions">
+                        <p class="tieu-de-khung pull-left"> 
+                            <?=Yii::t('app','Lý thuyết')?>
+                        </p>
+                        <li><a href="#" id="ly-thuyet-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
+                    </ul>
+                </div>
+                <div class="btn-toolbar" role="toolbar" aria-label="...">
+                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
+                        <i class="glyphicon glyphicon-floppy-save"></i>
+                    </button>
+                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
+                        <i class="glyphicon glyphicon-print"></i>
+                    </button> 
+                </div>
+                <div class="panel-body" id="ly-thuyet">
+                    <div id="huongdan">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="col-lg-6 dinh-khung ">
             <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
@@ -268,33 +293,10 @@
                     </button> 
                 </div>
                 <div class="panel-body" id="thuat-toan">
-                    <div id="huongdan">
-                        
-                    </div>
+                    
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
-                <div class="panel-heading" id="panel-heading" >
-                    <ul class="list-inline panel-actions">
-                        <p class="tieu-de-khung pull-left"> 
-                            <?=Yii::t('app','Lý thuyết')?>
-                        </p>
-                        <li><a href="#" id="ly-thuyet-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
-                    </ul>
-                </div>
-                <div class="btn-toolbar" role="toolbar" aria-label="...">
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
-                        <i class="glyphicon glyphicon-floppy-save"></i>
-                    </button>
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
-                        <i class="glyphicon glyphicon-print"></i>
-                    </button> 
-                </div>
-                <div class="panel-body" id="ly-thuyet">
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
