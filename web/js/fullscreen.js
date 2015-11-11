@@ -86,7 +86,7 @@ $(document).ready(function () {
         $(this).closest('.panel').toggleClass('panel-fullscreen');
     });
     // Ẩn hết tất cả các thẻ ban đầu
-    for(var i=0;i<4;i++){
+    for(var i=0;i<5;i++){
             chonloaian(i);
     }
 });
