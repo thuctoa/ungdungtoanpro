@@ -77,26 +77,32 @@
                 </div>
                 <div class="panel-body" id="dau-vao" >
                     <div id="noi-dung-dau-vao">
-                        <i>
-                            <h2 class="text-center">
-                                <div class="chon-loai-0">
-                                        <?=Yii::t('app','Tính định thức ma trận')?>
-                                </div>
-                                <div class="chon-loai-1"> 
-
-                                        <?=Yii::t('app','Giải hệ phương trình')?>
-                                </div>
-                                <div class="chon-loai-2">
-                                    <?=Yii::t('app','Tính hạng của ma trận')?>
-                                </div>
-                                <div class="chon-loai-3">
-                                    <?=Yii::t('app','Tìm ma trận nghịch đảo')?>
-                                </div>
-                            </h2>
-                        </i>
-                        <hr>
-                        <div id="noi-dung-dau-vao-chen">
                         
+                        <h1 class="text-center">
+                            <div class="chon-loai-100">
+                                <?=Yii::t('app','Ứng dụng toán chào mừng bạn!!!')?>
+                            </div>
+                            <div class="chon-loai-0">
+                                    <?=Yii::t('app','Tính định thức ma trận')?>
+                            </div>
+                            <div class="chon-loai-1"> 
+
+                                    <?=Yii::t('app','Giải hệ phương trình')?>
+
+                            </div>
+                            <div class="chon-loai-2">
+                                <?=Yii::t('app','Tính hạng của ma trận')?>
+
+                            </div>
+                            <div class="chon-loai-3">
+                                <?=Yii::t('app','Tìm ma trận nghịch đảo')?>
+
+                            </div>
+                        </h1>
+                       
+                        
+                        <div id="noi-dung-dau-vao-chen">
+                            <hr>
                         </div>
                     </div>
                     

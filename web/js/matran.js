@@ -64,7 +64,7 @@ function thay_doi(){
     var hang=document.getElementById('hang').value;
     var cot=document.getElementById('cot').value;
     if(hang>0&&cot>0){
-        var matran='';
+        var matran='<hr>';
         for(var i=0;i<hang;i++){
             matran=matran+'<div class="row">';
             for(var j=0;j<cot;j++){
@@ -145,7 +145,7 @@ function thay_doi_he(){
     var hang=document.getElementById('so_m').value;
     var cot=document.getElementById('so_n').value;
     if(hang>0&&cot>0){
-        var matran='';
+        var matran='<hr>';
         for(var i=0;i<hang;i++){
             matran=matran+'<div class="row">';
             for(var j=0;j<cot-1;j++){
