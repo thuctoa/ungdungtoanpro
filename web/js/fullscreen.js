@@ -90,16 +90,26 @@ $(document).ready(function () {
             chonloaian(i);
     }
 });
+var dangchon=100;
 function chonloaigiai(so){
-    
-    for(var i=0;i<5;i++){
-        if(i!=so){
-            chonloaian(i);
+    if(dangchon!=so){
+        for(var i=0;i<5;i++){
+            if(i!=so){
+                chonloaian(i);
+            }
+
         }
-        
+        chonloaian(100);
+        chonloaihien(so);
+        if(dangchon==1||so==1){
+            document.getElementById('noi-dung-dau-vao-chen').innerHTML="";
+        }
+        document.getElementById('noi-dung-dau-ra').innerHTML="";
+        //hien thi huong dan
+        huongdan('chon-loai-'+so);
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        dangchon=so;
     }
-    chonloaian(100);
-    chonloaihien(so);
 }
 function chonloaian(so){
     var divs = document.getElementsByClassName('chon-loai-'+so);

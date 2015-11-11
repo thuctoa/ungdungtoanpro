@@ -196,7 +196,7 @@ function thay_doi_he(){
     }
 }
 function giai_he(loaigiai){
-    huongdan(loaigiai);
+    //huongdan(loaigiai);
     var hang=document.getElementById('so_m').value;
     var cot=document.getElementById('so_n').value;
     if(hang>0&&cot>0){
@@ -245,7 +245,7 @@ function giai_he(loaigiai){
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
 function giai_matran(loaigiai){
-    huongdan(loaigiai);
+    //huongdan(loaigiai);
     var hang=document.getElementById('hang').value;
     var cot=document.getElementById('cot').value;
     if(hang>0&&cot>0){
