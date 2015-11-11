@@ -40,40 +40,40 @@
                                 </a>
                                 
                           </li>
-                          <li>
+                          <li onclick="chonloaigiai('4')">
                                 <a >
                                     <?=Yii::t('app','Lũy thừa')?>
                                 </a>
                           </li>
                         </ul>
                     </div>
-                    <button type="button" class="btn btn-default" onclick="chonloaigiai('2')" >
-                        <?=Yii::t('app','Phương trình')?>
+<!--                    <button type="button" class="btn btn-default">
+                        <?php //echo Yii::t('app','Phương trình');?>
                     </button>
                      <div class="btn-group" role="group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?=Yii::t('app','Đa thức')?> 
+                            <?php //echo Yii::t('app','Đa thức');?> 
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                          <li onclick="chonloaigiai('3')">
+                          <li >
                                 <a >
-                                    <?=Yii::t('app','Nhân đa thức')?>   
+                                    <?php //echo Yii::t('app','Nhân đa thức');?>   
                                 </a>
                           </li>
                           <li>
                                 <a >
-                                    <?=Yii::t('app','Chia đa thức')?>  
+                                    <?php //echo Yii::t('app','Chia đa thức');?>  
                                 </a>
                           </li>
                           <li>
                                 <a >
-                                     <?=Yii::t('app','Lũy thừa')?> 
+                                     <?php //echo Yii::t('app','Lũy thừa');?> 
                                 </a>
                                 
                           </li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="panel-body" id="dau-vao" >
                     <div id="noi-dung-dau-vao">
@@ -98,6 +98,10 @@
                                 <?=Yii::t('app','Tìm ma trận nghịch đảo')?>
 
                             </div>
+                            <div class="chon-loai-4">
+                                <?=Yii::t('app','Tính lũy thừa của ma trận')?>
+
+                            </div>
                         </h1>
                         <div id="noi-dung-dau-vao-chen">
                             
@@ -107,8 +111,8 @@
                 </div>
                 <div class="btn-toolbar nut-ma-tran" role="toolbar" aria-label="...">
                      
-                    <div class="chon-loai-0 chon-loai-2 chon-loai-3">
-                        <div class="input-group" style="width: 200px;">
+                    <div class="chon-loai-0 chon-loai-2 chon-loai-3 chon-loai-4">
+                        <div class="input-group" style="width: 150px;">
                             <span class="input-group-addon" id="sizing-addon1">
                                 <?=Yii::t('app','Số hàng')?>
                             </span>
@@ -124,6 +128,15 @@
                                    onchange="thay_doi();"
                                    id="cot" placeholder="n = ...">
                         </div><!-- /input-group -->
+                        <div class="chon-loai-4">
+                            <div class="input-group" style="width: 150px;">
+                                <span class="input-group-addon" id="sizing-addon1">
+                                    <?=Yii::t('app','Số mũ')?>
+                                </span>
+                                <input type="text" class="form-control" 
+                                       id="somu" placeholder="r = ...">
+                            </div><!-- /input-group -->
+                        </div>
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" class="btn btn-default"
                                     onclick="thay_doi();"
@@ -132,6 +145,7 @@
                             </button> 
                         </div>
                     </div>
+                    
                     <div class="btn-group  chon-loai-1 nut-ma-tran" role="group" aria-label="...">
                         <div class="input-group" style="width: 200px;">
                             <span class="input-group-addon" id="sizing-addon1">
@@ -180,6 +194,12 @@
                         <button type="button" 
                                 onclick="giai_matran('nghichdao');"
                                 class="btn btn-default nut-giai chon-loai-3" 
+                                title="<?=Yii::t('app','Giải')?>">
+                            <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                        <button type="button" 
+                                onclick="giai_matran('luythua');"
+                                class="btn btn-default nut-giai chon-loai-4" 
                                 title="<?=Yii::t('app','Giải')?>">
                             <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
                         </button>
