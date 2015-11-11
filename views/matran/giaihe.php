@@ -1,7 +1,14 @@
-<p>Hệ đầu vào có dạng</p>
+
 
 <?php
 use app\components\Matran;
+
+if($Thuvienchung->matran0($matran, $hang, $cot)){
+    echo 'Mời nhập vào các hệ số $a_{ij}$ ';
+}else if($hang==$cot&&$hang==1){
+    echo 'Nghiệm là $x_0 = '.($matranb[0][0]/$matran[0][0]).'$';
+}else{
+    echo '<p>Hệ đầu vào có dạng</p>';
     echo '\\begin{cases}';
     for ($i=0;$i<$hang;$i++){
         for($j=0;$j<$cot-1;$j++){
@@ -33,6 +40,7 @@ use app\components\Matran;
     $loaibocota=[];
     $loaibohangb=[];
 ?>
+
 <p>Viết dưới dạng ma trận là $Ax=B$ trong đó</p>
 $
 A = <?= $a->hienthi('pmatrix')?> , 
@@ -471,4 +479,5 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
         
 <?php
     }
+}
 ?>
