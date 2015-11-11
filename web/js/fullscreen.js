@@ -106,7 +106,8 @@ function chonloaigiai(so){
         }
         document.getElementById('noi-dung-dau-ra').innerHTML="";
         //hien thi huong dan
-        huongdan('chon-loai-'+so);
+        lythuyet('lythuyet-'+so);
+        thuattoan('thuattoan-'+so);
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         dangchon=so;
     }

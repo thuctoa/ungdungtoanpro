@@ -420,6 +420,62 @@ function huongdan(loaigiai){
             +loaigiai, false);
     xmlhttp.send();
 }
+function lythuyet(loaigiai){
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    } else { // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            var daura= xmlhttp.responseText;
+            if(daura){//Cắt ra một đoạn từ cụm từ daura đến footer 
+                var start = daura.indexOf('huongdan');
+                var end = daura.indexOf('footer');
+                document.getElementById('lythuyet').innerHTML
+                = daura.substring(start+10,end-1);
+            }else{
+                document.getElementById('lythuyet').innerHTML='loi roi';
+            }
+        }
+        if(xmlhttp.status==500){
+            alert('Lỗi máy chủ không thực thi được.');
+        }
+    }
+    xmlhttp.open("GET","/matran/huongdan.html?loaigiai="
+            +loaigiai, false);
+    xmlhttp.send();
+}
+function thuattoan(loaigiai){
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    } else { // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            var daura= xmlhttp.responseText;
+            if(daura){//Cắt ra một đoạn từ cụm từ daura đến footer 
+                var start = daura.indexOf('huongdan');
+                var end = daura.indexOf('footer');
+                document.getElementById('thuattoan').innerHTML
+                = daura.substring(start+10,end-1);
+            }else{
+                document.getElementById('thuattoan').innerHTML='loi roi';
+            }
+        }
+        if(xmlhttp.status==500){
+            alert('Lỗi máy chủ không thực thi được.');
+        }
+    }
+    xmlhttp.open("GET","/matran/huongdan.html?loaigiai="
+            +loaigiai, false);
+    xmlhttp.send();
+}
 if(document.getElementById('lienquandenmatran')
         &&document.getElementById('hephuongtrinh')){
     $("#lienquandenmatran").hide();

@@ -267,7 +267,7 @@
                     </button> 
                 </div>
                 <div class="panel-body" id="ly-thuyet">
-                    <div id="huongdan">
+                    <div id="lythuyet">
                         
                     </div>
                 </div>
@@ -293,7 +293,9 @@
                     </button> 
                 </div>
                 <div class="panel-body" id="thuat-toan">
-                    
+                    <div id="thuattoan">
+                        
+                    </div>
                 </div>
             </div>
         </div>
