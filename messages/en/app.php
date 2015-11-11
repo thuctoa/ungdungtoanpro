@@ -6,6 +6,7 @@
  * and open the template in the editor.
  */
 return [
+    'Đăng ký'=>'Signup',
     'Tìm ma trận nghịch đảo'=>'Find the inverse of a matrix',
     'Tính hạng của ma trận'=>'Calculate the rank of the matrix',
     'Tính định thức ma trận'=>'Calculate the determinant of the matrix',

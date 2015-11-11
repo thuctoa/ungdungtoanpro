@@ -42,7 +42,7 @@ AppAsset::register($this);
                    // ['label' => Yii::t('app','Books'), 'url' => ['/book/index']],
                    //  ['label' => Yii::t('app','Authors'), 'url' => ['/author/index']],
                     Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app','Đặng nhập'), 'url' => ['/site/login']] :
+                        ['label' => Yii::t('app','Đăng nhập'), 'url' => ['/site/login']] :
                         ['label' => Yii::t('app','Đăng xuất').' (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],

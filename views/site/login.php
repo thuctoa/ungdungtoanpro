@@ -6,13 +6,13 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\LoginForm */
 
-$this->title = Yii::t('app','Login');
+$this->title = Yii::t('app','Đăng nhập');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p><?=  Yii::t('app','Please fill out the following fields to login')?>:</p>
+    <p><?=  Yii::t('app','Vui lòng điền vào các lĩnh vực sau đây để đăng nhập')?>:</p>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
@@ -32,12 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
     ])->checkbox() ?>
     
     <div style="color:#999;margin:1em 0">
-        <?=  Yii::t('app','If you forgot your password you can')?> <?= Html::a(Yii::t('app','reset it'), ['site/request-password-reset']) ?>.
+        <?=  Yii::t('app','Nếu bạn quên mật khẩu bạn có thể')?> <?= Html::a(Yii::t('app','thiết lập lại nó'), ['site/request-password-reset']) ?>.
     </div>
 
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton(Yii::t('app','Login'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+            <?= Html::submitButton(Yii::t('app','Đăng nhập'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
         </div>
     </div>
 
