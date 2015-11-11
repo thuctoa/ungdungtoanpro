@@ -24,9 +24,10 @@
                     <button type="button" class="btn btn-default" onclick="chonloaigiai('2')" >
                         <?=Yii::t('app','Phương trình')?>
                     </button>
-                    <button type="button" class="btn btn-default" onclick="chonloaigiai('3')">
+                    <button type="button" class="btn btn-default " onclick="chonloaigiai('3')">
                         <?=Yii::t('app','Đa thức')?> 
                     </button>
+                    
                 </div>
                 <div class="panel-body" id="dau-vao" >
                     <div id="noi-dung-dau-vao">
@@ -46,6 +47,7 @@
                     </div>
                 </div>
                 <div class="btn-toolbar nut-ma-tran" role="toolbar" aria-label="...">
+                     
                     <div class="chon-loai-0">
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" class="btn btn-default ">
@@ -96,9 +98,14 @@
                             <input type="text" class="form-control" placeholder="<?=Yii::t('app','Số mũ')?> = ...">
                         </div><!-- /input-group -->
                     </div>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" title="<?=Yii::t('app','Mới')?>">
+                            <?=Yii::t('app','Mới')?><i class="glyphicon glyphicon-flash"></i>
+                        </button> 
+                    </div>
                     <div class="btn-group  pull-right" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default ">
-                            <span class="glyphicon glyphicon-play"></span>
+                        <button type="button" class="btn btn-default nut-giai " title="<?=Yii::t('app','Giải')?>">
+                            <?=Yii::t('app','Giải')?> &nbsp <span class="glyphicon glyphicon-play"></span>
                         </button>
                     </div>
                 </div>

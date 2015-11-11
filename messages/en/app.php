@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 return [
+    'Mới'=>'New',
+    'Giải'=>'Solve',
     'Kết quả'=>'Result',
     'Lý thuyết'=>'Theory',
     'Thuật toán'=>'Algorithm',
