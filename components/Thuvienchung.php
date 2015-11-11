@@ -205,16 +205,22 @@ class Thuvienchung extends Component{
         $dinhthuc=$this->dinhthucthuong($matran, $capmatran);
         if($dinhthuc!=0){
             $matranlienhop=[];
-            $matrancon= $this->toanbomatrancon(
-                    $this->matranchuyenvi($matran, $capmatran, $capmatran), 
-                    $capmatran, 
-                    $capmatran
-                );
-            for($i=0;$i<$capmatran;$i++){
-                for($j=0;$j<$capmatran;$j++){
-                    $matranlienhop[$i][$j]=  pow(-1, $i+$j)*
-                    $this->dinhthucthuong($matrancon[$i][$j], $capmatran-1);
+            if($capmatran>1){
+                
+                $matrancon= $this->toanbomatrancon(
+                        $this->matranchuyenvi($matran, $capmatran, $capmatran), 
+                        $capmatran, 
+                        $capmatran
+                    );
+                for($i=0;$i<$capmatran;$i++){
+                    for($j=0;$j<$capmatran;$j++){
+                        $matranlienhop[$i][$j]=  pow(-1, $i+$j)*
+                        $this->dinhthucthuong($matrancon[$i][$j], $capmatran-1);
+                    }
                 }
+                
+            }else{
+                $matranlienhop[0][0]=1;
             }
             return $matranlienhop;
         }else{
