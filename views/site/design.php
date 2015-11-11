@@ -51,20 +51,16 @@
                             <button type="button" class="btn btn-default">
                                 <?=Yii::t('app','Định thức')?>  
                             </button>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="...">
                             <button type="button" class="btn btn-default">
                                 <?=Yii::t('app','Hạng')?> 
                             </button>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="...">
                             <button type="button" class="btn btn-default">
                                 <?=Yii::t('app','Nghịch đảo')?>
                             </button>
                         </div>
                         <div class="input-group" style="width: 200px;">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
+                                <button class="btn btn-default btn-luy-thua" type="button">
                                     <?=Yii::t('app','Lũy thừa')?> 
                                 </button>
                             </span>
@@ -86,17 +82,19 @@
                             <button type="button" class="btn btn-default">
                                 <?=Yii::t('app','Nhân đa thức')?>  
                             </button>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="...">
+                     
                             <button type="button" class="btn btn-default">
                                 <?=Yii::t('app','Chia đa thức')?>
                             </button>
                         </div>
-                        <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">
-                                <?=Yii::t('app','Lũy thừa')?>
-                            </button>
-                        </div>
+                        <div class="input-group" style="width: 200px;">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btn-luy-thua" type="button">
+                                    <?=Yii::t('app','Lũy thừa')?> 
+                                </button>
+                            </span>
+                            <input type="text" class="form-control" placeholder="<?=Yii::t('app','Số mũ')?> = ...">
+                        </div><!-- /input-group -->
                     </div>
                     <div class="btn-group  pull-right" role="group" aria-label="...">
                         <button type="button" class="btn btn-default ">
