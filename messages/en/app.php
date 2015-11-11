@@ -6,6 +6,10 @@
  * and open the template in the editor.
  */
 return [
+    'Kết quả'=>'Result',
+    'Lý thuyết'=>'Theory',
+    'Thuật toán'=>'Algorithm',
+    'Đề bài'=>'Threads',
     'Xem đáp án'=>'View result',
     'Xem lời giải'=>'View solve',
     'Nhân đa thức'=>'Polynomial multiplication',

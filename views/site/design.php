@@ -5,7 +5,11 @@
         <div class="col-lg-6 dinh-khung ">
             <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
                 <div class="panel-heading" id="panel-heading" >
+                   
                     <ul class="list-inline panel-actions" >
+                        <p class="tieu-de-khung pull-left"> 
+                            <?=Yii::t('app','Đề bài')?>
+                        </p>
                         <li> <a href="#" id="dau-vao-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
@@ -106,6 +110,9 @@
             <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
                 <div class="panel-heading " id="panel-heading" >
                     <ul class="list-inline panel-actions">
+                        <p class="tieu-de-khung pull-left"> 
+                            <?=Yii::t('app','Kết quả')?>
+                        </p>
                         <li><a href="#" id="dau-ra-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
@@ -123,15 +130,13 @@
                 </div>
                 <div class="btn-toolbar " role="toolbar" aria-label="...">
                     <div class="btn-group pull-right" role="group" aria-label="...">
-                        <a href="#" id="save-pdf" class="btn btn-default" role="button" 
-                           title="<?=Yii::t('app','Lưu PDF')?> ">
-                            <i class="glyphicon glyphicon-floppy-save"></i>
-                        </a>
-                        
-                        <a href="#" id="save-pdf" class="btn btn-default" role="button" 
-                           title="<?=Yii::t('app','In')?>">
-                            <i class="glyphicon glyphicon-print"></i>
-                        </a>
+                        <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
+                        <i class="glyphicon glyphicon-floppy-save"></i>
+                    </button>
+                    <div class="btn-group pull-right" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
+                        <i class="glyphicon glyphicon-print"></i>
+                    </button> 
                     </div>
                 </div>
             </div>
@@ -145,6 +150,9 @@
             <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
                 <div class="panel-heading" id="panel-heading" >
                     <ul class="list-inline panel-actions">
+                        <p class="tieu-de-khung pull-left"> 
+                            <?=Yii::t('app','Thuật toán')?>
+                        </p>
                         <li><a href="#" id="thuat-toan-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
@@ -157,6 +165,9 @@
             <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
                 <div class="panel-heading" id="panel-heading" >
                     <ul class="list-inline panel-actions">
+                        <p class="tieu-de-khung pull-left"> 
+                            <?=Yii::t('app','Lý thuyết')?>
+                        </p>
                         <li><a href="#" id="ly-thuyet-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
