@@ -82,7 +82,7 @@ class BookController extends Controller
         $model = $this->findModel($id);
         $model->user_id= \Yii::$app->user->id;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['/']);
+            return $this->redirect(['/site/index']);
             //return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
