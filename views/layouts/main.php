@@ -37,7 +37,7 @@ AppAsset::register($this);
             ]);
             
             $items = [
-                  //  ['label' => Yii::t('app','About'), 'url' => ['/site/about']],
+                    ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
                     ['label' => Yii::t('app','Liên lạc'), 'url' => ['/site/contact']],
                    // ['label' => Yii::t('app','Books'), 'url' => ['/book/index']],
                    //  ['label' => Yii::t('app','Authors'), 'url' => ['/author/index']],
