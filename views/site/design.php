@@ -99,10 +99,8 @@
 
                             </div>
                         </h1>
-                       
-                        
                         <div id="noi-dung-dau-vao-chen">
-                            <hr>
+                            
                         </div>
                     </div>
                     
