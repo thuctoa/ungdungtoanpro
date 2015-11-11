@@ -29,4 +29,8 @@
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
+    border-radius: 0px;
+}
+.panel{
+    border-radius: 0px;
 }

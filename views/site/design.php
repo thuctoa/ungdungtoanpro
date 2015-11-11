@@ -3,7 +3,7 @@
     <hr>
     <div class="row dau-vao-dau-ra">
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
+            <div class="panel panel-default vien-ngoai" style="//background: rgba(0,0,0, 0.2);">
                 <div class="panel-heading" id="panel-heading" >
                    
                     <ul class="list-inline panel-actions" >
@@ -48,7 +48,7 @@
                 <div class="btn-toolbar nut-ma-tran" role="toolbar" aria-label="...">
                     <div class="chon-loai-0">
                         <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">
+                            <button type="button" class="btn btn-default ">
                                 <?=Yii::t('app','Định thức')?>  
                             </button>
                             <button type="button" class="btn btn-default">

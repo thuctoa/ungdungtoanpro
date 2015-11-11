@@ -5,8 +5,12 @@ body{
     padding-bottom: 50px;
 }
 .toan-bo-trang{
-    //background: url(../img/background.jpg);
+    //background: url(../img/previewHD.png);
     height: 100%;
+}
+
+.btn-default {
+    background-color: transparent;
 }
 .panel-body{
     
@@ -40,12 +44,17 @@ body{
     margin-top: 5px;
     margin-left: 0px;
 }
+
+.vien-ngoai{
+    background-color: #ddd;
+}
 #noi-dung-dau-vao{
     box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3);
     border: 1px solid #d9d9d9;
     border-top: 1px solid #c0c0c0;
     height: 100%;
     box-sizing: border-box;
+    background: white;
 }
 #noi-dung-dau-vao:hover{
     //background: white;
@@ -118,6 +127,7 @@ button{
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
+    
 }
 .btn-toolbar >button{
     border: 1px solid transparent;
@@ -133,10 +143,10 @@ button{
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
-    
+   
 }
 .btn-group>button,.btn-luy-thua{
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid transparent;
     font-family: arial,sans-serif!important;
     transition: max-width ease-in-out 400ms;
     box-shadow: none;
@@ -165,4 +175,7 @@ button{
   //  color: white;
     padding-left: 20px;
     //font-weight: bolder;
+}
+.btn-default{
+    background: transparent !important;
 }
