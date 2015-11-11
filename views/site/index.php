@@ -152,7 +152,7 @@
                                    onchange="thay_doi_he();"
                                    id="so_m" placeholder="m = ...">
                         </div><!-- /input-group -->
-                        <div class="input-group" style="width: 150px;">
+                        <div class="input-group" style="width: 200px;">
                             <span class="input-group-addon" id="sizing-addon1">
                                 <?=Yii::t('app','Số ẩn')?>
                             </span>

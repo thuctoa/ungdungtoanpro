@@ -6,8 +6,14 @@
  * and open the template in the editor.
  */
 return [
-    'Số phương trình'=>'Numva',
-    'Số ẩn'=>'NumAv',
+    'Tìm ma trận nghịch đảo'=>'Find the inverse of a matrix',
+    'Tính hạng của ma trận'=>'Calculate the rank of the matrix',
+    'Tính định thức ma trận'=>'Calculate the determinant of the matrix',
+    'Tính lũy thừa của ma trận'=>'Calculate the power of the matrix',
+    'Số hàng'=>'Num row',
+    'Số cột'=>'Num col',
+    'Số phương trình'=>'Num equation',
+    'Số ẩn'=>'Num variable',
     'Mới'=>'New',
     'Giải'=>'Solve',
     'Kết quả'=>'Result',
@@ -85,7 +91,7 @@ return [
     'Nghịch đảo'=>'Inverse',
     'Giải hệ phương trình'=>'Solve equations',
     'Giải phương trình'=>'Solve equation',
-    'Số mũ'=>'Index number',
+    'Số mũ'=>'Index num',
     'Loại bài viết' => 'Type book',
     'Lưu PDF' =>'Save PDF',
     'In' => 'Print',
