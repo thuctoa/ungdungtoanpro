@@ -80,7 +80,7 @@
                         
                         <h1 class="text-center">
                             <div class="chon-loai-100">
-                                <?=Yii::t('app','Ứng dụng toán chào mừng bạn!!!')?>
+                                <?php //echo Yii::t('app','Ứng dụng toán chào mừng bạn!!!')?>
                             </div>
                             <div class="chon-loai-0">
                                     <?=Yii::t('app','Tính định thức ma trận')?>
