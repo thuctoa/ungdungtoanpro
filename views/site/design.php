@@ -104,10 +104,8 @@
                             </div>
                         </h1>
                         <div id="noi-dung-dau-vao-chen">
-                            
                         </div>
                     </div>
-                    
                 </div>
                 <div class="btn-toolbar nut-ma-tran" role="toolbar" aria-label="...">
                      
@@ -145,7 +143,6 @@
                             </button> 
                         </div>
                     </div>
-                    
                     <div class="btn-group  chon-loai-1 nut-ma-tran" role="group" aria-label="...">
                         <div class="input-group" style="width: 200px;">
                             <span class="input-group-addon" id="sizing-addon1">
@@ -296,7 +293,6 @@
                     </button> 
                 </div>
                 <div class="panel-body" id="ly-thuyet">
-                   
                 </div>
             </div>
         </div>
