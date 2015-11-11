@@ -291,6 +291,9 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
                                 if($ketquab[$t][0]!=0){
                                     $phantutongquat=$phantutongquat.$ketquab[$t][0];
                                     echo $ketquab[$t][0];
+                                }else{
+                                    $phantutongquat=$phantutongquat.'0';
+                                    echo '0';
                                 }
                                 foreach ($ketquax as $val){
                                     $xtam=$val['a'][$t][0]*-1;
