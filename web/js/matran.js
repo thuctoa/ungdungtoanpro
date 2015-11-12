@@ -72,7 +72,7 @@ function thay_doi(){
                                 <div class="input-group" id="input-matran">\
                                 <input type="text" \
                                 class="form-control" \
-                                placeholder="a['+i+']['+j+']= .." \
+                                placeholder="a['+i+']['+j+']" \
                                 aria-describedby="basic-addon1"\
                                 name ="a['+i+']['+j+']"\
                                 id="a['+i+']['+j+']"\
@@ -83,8 +83,10 @@ function thay_doi(){
         }
         matran=matran+'<hr>';
         document.getElementById('noi-dung-dau-vao-chen').innerHTML=matran;
-        var width=(150 + 2)*cot ;
+        var width=(73 + 2)*cot ;
         document.getElementById('noi-dung-dau-vao-chen').style['width']=width +'px';
+        document.getElementById('noi-dung-dau-vao-chen').style['margin-left']= 'auto';
+        document.getElementById('noi-dung-dau-vao-chen').style['margin-right']= 'auto';
     }
 }
 function thaydoihe(){
@@ -161,19 +163,16 @@ function thay_doi_he(){
                                 </div>';
             }
             matran = matran + '\
-                                <div class="input-group" id="input-hecuoi">\
+                                <div class="input-group" id="input-he">\
                                 <input type="text" \
                                 class="form-control" \
                                 placeholder="a['+i+']['+j+']" \
                                 aria-describedby="basic-addon1"\
                                 name ="a_he['+i+']['+j+']"\
                                 id="a_he['+i+']['+j+']"\
-                                ><span class="input-group-addon">$x_{'+j+'}$</span> \n\
+                                ><span class="input-group-addon">$x_{'+j+'} = $ </span> \n\
                                 </div>';
-            matran = matran + '\
-                                <div class="input-group text-center" id="daubang">\
-                                 =  \
-                                </div>';
+
             matran = matran + '\
                                  <div class="input-group" id="input-hecuoi">\
                                 <input type="text" \
@@ -188,7 +187,7 @@ function thay_doi_he(){
         }
         //matran=matran+'<hr>';
         document.getElementById('noi-dung-dau-vao-chen').innerHTML=matran;
-        var width=(150 + 4)*cot +200 ;
+        var width=(130 + 2)*cot +60 ;
         document.getElementById('noi-dung-dau-vao-chen').style['width']=width +'px';
         document.getElementById('noi-dung-dau-vao-chen').style['margin-left']= 'auto';
         document.getElementById('noi-dung-dau-vao-chen').style['margin-right']= 'auto';

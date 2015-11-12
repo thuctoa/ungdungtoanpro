@@ -78,7 +78,7 @@
                 <div class="panel-body" id="dau-vao" >
                     <div id="noi-dung-dau-vao">
                         
-                        <h1 class="text-center">
+                        <h3 class="text-center">
                             <div class="chon-loai-100">
                                 <?php //echo Yii::t('app','Ứng dụng toán chào mừng bạn!!!')?>
                             </div>
@@ -102,7 +102,7 @@
                                 <?=Yii::t('app','Tính lũy thừa của ma trận')?>
 
                             </div>
-                        </h1>
+                        </h3>
                         <div id="noi-dung-dau-vao-chen">
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                                    onchange="thay_doi();"
                                    id="hang" placeholder="m = ...">
                         </div><!-- /input-group -->
-                        <div class="input-group" style="width: 150px;">
+                        <div class="input-group" style="width: 140px;">
                             <span class="input-group-addon" id="sizing-addon1">
                                 <?=Yii::t('app','Số cột')?>
                             </span>
@@ -152,7 +152,7 @@
                                    onchange="thay_doi_he();"
                                    id="so_m" placeholder="m = ...">
                         </div><!-- /input-group -->
-                        <div class="input-group" style="width: 200px;">
+                        <div class="input-group" style="width: 130px;">
                             <span class="input-group-addon" id="sizing-addon1">
                                 <?=Yii::t('app','Số ẩn')?>
                             </span>
@@ -210,7 +210,7 @@
             </div>
         </div>
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
+            <div class="panel panel-default " style=" //background-color: whitesmoke;">
                 <div class="panel-heading " id="panel-heading" >
                     <ul class="list-inline panel-actions">
                         <p class="tieu-de-khung pull-left"> 

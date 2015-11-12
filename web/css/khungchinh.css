@@ -17,10 +17,12 @@ body{
     overflow: auto;
 }
 #ly-thuyet{
+    //background: url(../img/previewHD.png);
     height: 55vh;
     overflow: auto;
 }
 #thuat-toan{
+   // background: url(../img/previewHD.png);
     height: 55vh;
     overflow: auto;
 }
