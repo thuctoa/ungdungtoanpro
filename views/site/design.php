@@ -300,3 +300,10 @@
         </div>
     </div>
 </div>
+    $$
+    \begin{cases}
+        2x + 3y =6\\
+        8x -10 y =5
+    \end{cases}
+$$
+abc.pdf

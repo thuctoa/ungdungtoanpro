@@ -233,16 +233,20 @@
                 </div>
                 <div class="btn-toolbar " role="toolbar" aria-label="...">
                     <div class="btn-group pull-right" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
+                        <button type="button" class="btn btn-default "
+                                title="<?=Yii::t('app','Lưu PDF')?>"
+                                onclick="luupdf('noi-dung-dau-ra');"
+                        >
                             <i class="glyphicon glyphicon-floppy-save"></i>
                         </button>
-                    <div class="btn-group pull-right" role="group" aria-label="...">
+                    </div>
+<!--                    <div class="btn-group pull-right" role="group" aria-label="...">
                         <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
                             <i class="glyphicon glyphicon-print"></i>
                         </button> 
-                    </div>
-                    </div>
+                    </div>-->
                 </div>
+            </div>
         </div>
     </div>
     
@@ -258,19 +262,13 @@
                         <li><a href="#" id="ly-thuyet-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
-                <div class="btn-toolbar" role="toolbar" aria-label="...">
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
-                        <i class="glyphicon glyphicon-floppy-save"></i>
-                    </button>
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
-                        <i class="glyphicon glyphicon-print"></i>
-                    </button> 
-                </div>
+                
                 <div class="panel-body" id="ly-thuyet">
                     <div id="lythuyet">
                         
                     </div>
                 </div>
+                
             </div>
         </div>
         
@@ -284,19 +282,13 @@
                         <li><a href="#" id="thuat-toan-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
-                <div class="btn-toolbar" role="toolbar" aria-label="...">
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Lưu PDF')?>">
-                        <i class="glyphicon glyphicon-floppy-save"></i>
-                    </button>
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','In')?>">
-                        <i class="glyphicon glyphicon-print"></i>
-                    </button> 
-                </div>
+                
                 <div class="panel-body" id="thuat-toan">
                     <div id="thuattoan">
                         
                     </div>
                 </div>
+                
             </div>
         </div>
         

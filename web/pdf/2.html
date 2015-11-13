@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="Wk83TXowMGkIKVl9TX11DTAbQjlLBGY9Ozp2LiJ6YzljB1w/S2Z/AQ==">
+    <title></title>
+    <link href="/assets/d947110a/css/bootstrap.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet">
+<link href="/css/ihover.css" rel="stylesheet">
+<link href="/css/webvowl.app.css" rel="stylesheet">
+<link href="/css/webvowl.css" rel="stylesheet">
+<link href="/css/ungdungtoan.css" rel="stylesheet">
+<link href="/css/khungchinh.css" rel="stylesheet">
+<link href="/css/fullscreen.css" rel="stylesheet">
+<link href="/css/languages.min.css" rel="stylesheet">    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+</head>
+<body>
+
+    <div class="wrap">
+         <nav id="w0" class="breadcrumb navbar" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/img/logo-nav.png" alt=""></a></div><div id="w0-collapse" class="collapse navbar-collapse"><ul id="w1" class="navbar-nav navbar-right nav"><li><a href="/sites.html">Trang chủ</a></li>
+<li><a href="/site/contact.html">Liên lạc</a></li>
+<li><a href="/site/logout.html" data-method="post">Đăng xuất (admin)</a></li>
+<li><a href="/admin/assignment.html">Phân quyền</a></li></ul></div></div></nav>        
+<!DOCTYPE html>
+<html>
+<head>
+<title>MathJax TeX Test Page</title>
+<!-- Copyright (c) 2010-2015 The MathJax Consortium -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="../MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+</head>
+<body>
+
+<p>
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+</p>
+
+</body>
+</html>
+ 
+    </div>
+    
+    <footer class="footer">
+        <div  id="language-selector" class="pull-right" style="position: relative; margin-top: -10px;">
+            
+<form action="/site/test.html" method="post">
+<input type="hidden" name="_csrf" value="Wk83TXowMGkIKVl9TX11DTAbQjlLBGY9Ozp2LiJ6YzljB1w/S2Z/AQ==">    <div id="language-select">
+                <button type="button"  class="btn btn-default btn-sm" onclick="language_change('vi')">
+            <span class="lang-xs lang-lbl" lang="vi"></span> 
+        </button>
+        <button type="button"  class="btn btn-default btn-sm" onclick="language_change('en')">
+            <span class="lang-xs lang-lbl" lang="en"></span> 
+        </button>
+    
+                <script type="text/javascript">
+        function language_change(selected)
+        {
+            $.ajax('/site/language.html',
+{'type':'post',
+success : function(data) {window.location.reload();},
+'data':'_lang='+selected+'&YII_CSRF_TOKEN=Wk83TXowMGkIKVl9TX11DTAbQjlLBGY9Ozp2LiJ6YzljB1w/S2Z/AQ==',            }
+            );
+        }
+        </script>
+    </div>
+</form>        </div>
+        <div class="container">
+           
+            <a href="/" class="pull-left text-primary ">&copy; Ứng dụng toán 2015</a>
+            <a href="/site/contact.html" class="pull-right text-primary">Tác giả: Nguyễn Thế Thức - 
+                Địa chỉ Email: thucfami@gmail.com - 
+                Số điện thoại: 0979 846 286&nbsp;&nbsp;&nbsp;</a>
+        </div>
+    </footer>
+
+<script src="/assets/e107d874/jquery.js"></script>
+<script src="/assets/46aead43/yii.js"></script>
+<script src="/js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/js/matran.js"></script>
+<script src="/js/latexit.js"></script>
+<script src="/js/fullscreen.js"></script>
+<script src="/assets/d947110a/js/bootstrap.js"></script></body>
+</html>

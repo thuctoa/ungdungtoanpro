@@ -15,6 +15,10 @@ use app\components\Thuvienchung;
 
 class SiteController extends Controller
 {
+    public function beforeAction($action) {
+            $this->enableCsrfValidation = false;
+            return parent::beforeAction($action);
+    }
     public function behaviors()
     {
         return [
@@ -56,6 +60,7 @@ class SiteController extends Controller
         ];
     }
     public function actionDesign(){
+        
         return $this->render('design');
     }
 
@@ -67,10 +72,35 @@ class SiteController extends Controller
         ]);
     }
     
+    public function actionPdf(){
+        return $this->render('pdf');
+    }
+
     public function actionTest()
-    {
-        
-        return $this->render('test');
+    {//shell_exec("wkhtmltopdf http://www.google.com output.pdf 2>&1");
+//        if(Yii::$app->user->isGuest){
+//             echo '<script> alert("Bạn cần phải đăng nhập, '
+//            . ' mới thực hiện được chức năng này!."); </script>';
+//            return $this->redirect('/site/login.html');
+//        }else{
+//            $rand=  Yii::$app->user->id;
+//            $documentTemplate = $this->render ("pdf");
+////            $vtdau=strpos($documentTemplate, '<nav');
+////            $vtcuoi=strpos($documentTemplate, '/nav>');
+////            $nav=substr($documentTemplate,$vtdau,$vtcuoi-$vtdau+5);
+////            $documentTemplate=str_replace( $nav, "", $documentTemplate );
+//            foreach ($_POST as $key => $postVar)
+//            {
+//                $documentTemplate = 
+//                preg_replace ("/name=\"$key\"/", "value=\"$postVar\"", $documentTemplate);
+//            }
+//            file_put_contents ("pdf/".$rand.".html", $documentTemplate);
+//            shell_exec ("wkhtmltopdf http://ungdungtoan.pro/pdf/".$rand.".html pdf/".$rand.".pdf 2>&1");
+//
+//            //shell_exec("wkhtmltopdf http://ungdungtoan.pro/site/design.html pdf/".$rand.".pdf 2>&1");
+//            return $this->redirect("http://ungdungtoan.pro/pdf/".$rand.".pdf");
+       // }
+       return $this->render('test');
     }
     
     public function actionLogin()

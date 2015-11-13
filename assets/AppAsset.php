@@ -31,7 +31,9 @@ class AppAsset extends AssetBundle
         'js/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
         'js/matran.js',
         'js/latexit.js',
+        'js/jspdf.debug.js',
         'js/fullscreen.js',
+        
     ];
     public $depends = [
         'yii\web\YiiAsset',

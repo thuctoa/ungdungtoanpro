@@ -289,6 +289,28 @@ function giai_matran(loaigiai){
     }
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
+
+function luupdf(idluu){
+    var htmlluupdf=document.getElementById(idluu).innerHTML;
+    // Create a form
+    var mapForm = document.createElement("form");
+    mapForm.target = "_blank";    
+    mapForm.method = "POST";
+    mapForm.action = "site/pdf.html";
+
+    // Create an input
+    var mapInput = document.createElement("input");
+    mapInput.type = "html";
+    mapInput.name = "luupdf";
+    mapInput.value = htmlluupdf;
+    // Add the input to the form
+    mapForm.appendChild(mapInput);
+    // Add the form to dom
+   // document.body.appendChild(mapForm);
+    // Just submit
+    mapForm.submit();
+}
+
 if(document.getElementById('input-so_anso_n')&&document.getElementById('so_anso_n')){
     var width=(document.getElementById('input-so_anso_n').offsetWidth + 2)*3 ;
     document.getElementById('so_anso_n').style['width']=width +'px';
