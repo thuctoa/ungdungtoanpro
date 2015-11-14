@@ -1,5 +1,5 @@
 
-
+<div id="loi-giai">
 <?php
 use app\components\Matran;
 
@@ -39,6 +39,7 @@ if($Thuvienchung->matran0($matran, $hang, $cot)){
     $loaibohanga=[];
     $loaibocota=[];
     $loaibohangb=[];
+    $ketquab=[];
 ?>
 
 <p>Viết dưới dạng ma trận là $Ax=B$ trong đó</p>
@@ -70,6 +71,14 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
 <?php
     if($ranka!=$rankc){
         echo '<p> Do hạng của $A$ và $\bar{A}$ khác nhau nên hệ vô nghiệm</p>';
+?>
+        </div>
+            <div id="dap-an">
+                <p> Hệ vô nghiệm</p>
+                <hr>
+            </div>
+<?php
+        
     }else{
         echo '<p> Do hạng của $A$ và $\bar{A}$ bằng nhau và bằng '
         .$ranka.' nên hệ có nghiệm ';
@@ -357,7 +366,31 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
                 ?>
                 )$
             </p>
-            
+            </div>
+            <div id="dap-an">
+                <p>Kết luận 
+                    với $
+                    <?php
+                        for ($i=0;$i<$nghiemdoclap;$i++){
+                            echo '\\forall \\alpha_{'.$i.'}\\in \\mathbb{R}, ';
+                        }
+                    ?>
+                    $
+                     thì nghiệm tìm được là một họ nghiệm có dạng 
+                    $(
+                    <?php
+                        foreach ($nghiemtongquat as $key=> $val){  
+                            if($key!=  count($nghiemtongquat)-1){
+                                echo $val.'\\quad , \\quad';
+                            }else{
+                                echo $val;
+                            }
+                        }
+                    ?>
+                    )$
+                </p>
+                <hr>
+            </div>
 <?php
             
         }else if($ranka == $cot&&$hang!=$cot){
@@ -418,7 +451,23 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
                         }
                 ?>)
             $
-            
+             </div>
+            <div id="dap-an">
+                <p>Hệ phương trình có nghiệm duy nhất là </p>
+                $
+                    (<?php
+                            for($i=0;$i<$cot;$i++){
+                                if($i!=$cot-1){
+                                    echo $ketquab[$i][0].',\\quad';
+                                }else{
+                                    echo $ketquab[$i][0];
+                                }
+
+                            }
+                    ?>)
+                $
+                <hr>
+            </div>
 <?php
         }
         else if($ranka == $cot&&$hang==$cot){
@@ -476,11 +525,29 @@ rank(\bar{A}) = rank \begin{Bmatrix} <?= $Thuvienchung->hienthilayhang($c->matra
                         }
                 ?>)
             $
+            </div>
+            <div id="dap-an">
+                <p>Nghiệm của hệ phương trình tìm được là </p>
+                $
+                    (<?php
+                            for($i=0;$i<$cot;$i++){
+                                if($i!=$cot-1){
+                                    echo $ketquab[$i][0].',\\quad';
+                                }else{
+                                    echo $ketquab[$i][0];
+                                }
+
+                            }
+                    ?>)
+                $
+                <hr>
+            </div>
 <?php
         }
-        ?>
-        
-<?php
+       
     }
+     
 }
 ?>
+
+

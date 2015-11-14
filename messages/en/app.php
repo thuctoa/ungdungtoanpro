@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 return [
+    'Lời&nbspgiải'=>'The&nbspanswer',
+    'Kết&nbspquả'=>'Result',
     'Đăng ký'=>'Signup',
     'Tìm ma trận nghịch đảo'=>'Find the inverse of a matrix',
     'Tính hạng của ma trận'=>'Calculate the rank of the matrix',
@@ -13,8 +15,8 @@ return [
     'Tính lũy thừa của ma trận'=>'Calculate the power of the matrix',
     'Số hàng'=>'Num row',
     'Số cột'=>'Num col',
-    'Số phương trình'=>'Num equation',
-    'Số ẩn'=>'Num variable',
+    'Số phương trình'=>'Num equa',
+    'Số ẩn'=>'Num var',
     'Mới'=>'New',
     'Giải'=>'Solve',
     'Kết quả'=>'Result',

@@ -194,7 +194,27 @@ function thay_doi_he(){
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
     }
 }
+function hienthiketqua()
+{
+    state=document.getElementById('xem-loi-giai').checked;
+    var loigiai=document.getElementById('loi-giai');
+    var dapan=document.getElementById('dap-an');
+    if(loigiai&&dapan){
+        if(state==false){
+            loigiai.style.visibility="hidden";
+            loigiai.style.display = "none";
+            dapan.style.visibility="visible";
+            dapan.style.display = "block";
+        }else{
+            loigiai.style.visibility="visible";
+            loigiai.style.display = "block";
+            dapan.style.visibility="hidden";
+            dapan.style.display = "none";
+        }
+    }
+}
 function giai_he(loaigiai){
+    
     //huongdan(loaigiai);
     var hang=document.getElementById('so_m').value;
     var cot=document.getElementById('so_n').value;
@@ -230,6 +250,8 @@ function giai_he(loaigiai){
                 }else{
                     document.getElementById('noi-dung-dau-ra').innerHTML='loi roi';
                 }
+                hienthiketqua();
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             }
             if(xmlhttp.status==500){
                 alert('Lỗi máy chủ không thực thi được.');
@@ -241,7 +263,7 @@ function giai_he(loaigiai){
                 + matran + matranb, false);
         xmlhttp.send();
     }
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    
 }
 function giai_matran(loaigiai){
     //huongdan(loaigiai);

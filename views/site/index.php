@@ -1,6 +1,6 @@
 <div class="toan-bo-trang">
     <p class="giaitoantructuyen"><?=Yii::t('app','Giải toán trực tuyến')?></p>
-    <hr>
+    <p>&nbsp;</p>
     <div class="row dau-vao-dau-ra">
         <div class="col-lg-6 dinh-khung ">
             <div class="panel panel-default vien-ngoai" style="//background: rgba(0,0,0, 0.2);">
@@ -210,7 +210,7 @@
             </div>
         </div>
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style=" //background-color: whitesmoke;">
+            <div class="panel panel-default " style="// background: url(../img/bg-site.png);">
                 <div class="panel-heading " id="panel-heading" >
                     <ul class="list-inline panel-actions">
                         <p class="tieu-de-khung pull-left"> 
@@ -219,13 +219,13 @@
                         <li><a href="#" id="dau-ra-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
                 </div>
-                <div class="btn-toolbar" role="toolbar" aria-label="...">
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Xem đáp án')?>">
-                        <span class="glyphicon glyphicon-ok" >  </span>
-                    </button>
-                    <button type="button" class="btn btn-default " title="<?=Yii::t('app','Xem lời giải')?> ">
-                        <span class="glyphicon glyphicon-eye-open" > </span>
-                    </button>
+                
+                <div class="xem-loi-giai text-center" title="<?=Yii::t('app','Xem lời giải')?>">
+                    <input  type="checkbox"
+                            data-on-text="<?=Yii::t('app','Lời&nbspgiải')?>"
+                            data-off-text="<?=Yii::t('app','Kết&nbspquả')?>"
+                            data-size="normal"
+                            id="xem-loi-giai" name="my-checkbox" >
                 </div>
                 <div class="panel-body" id="dau-ra">
                     <div id="noi-dung-dau-ra">

@@ -25,7 +25,9 @@ class AppAsset extends AssetBundle
         'css/ungdungtoan.css',
         'css/khungchinh.css',
         'css/fullscreen.css',
-        'css/languages.min.css'
+        'css/languages.min.css',
+        'css/bootstrap-switch.css',
+        'css/bootstrap-switch.min.css'
     ];
     public $js = [
         'js/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
@@ -33,6 +35,8 @@ class AppAsset extends AssetBundle
         'js/latexit.js',
         'js/jspdf.debug.js',
         'js/fullscreen.js',
+        'js/bootstrap-switch.js',
+        'js/bootstrap-switch.min.js'
         
     ];
     public $depends = [

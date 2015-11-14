@@ -85,6 +85,24 @@ $(document).ready(function () {
         }
         $(this).closest('.panel').toggleClass('panel-fullscreen');
     });
+    $("[name='my-checkbox']").bootstrapSwitch();
+    $('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+        var loigiai=document.getElementById('loi-giai');
+        var dapan=document.getElementById('dap-an');
+        if(loigiai&&dapan){
+            if(state==false){
+                loigiai.style.visibility="hidden";
+                loigiai.style.display = "none";
+                dapan.style.visibility="visible";
+                dapan.style.display = "block";
+            }else{
+                loigiai.style.visibility="visible";
+                loigiai.style.display = "block";
+                dapan.style.visibility="hidden";
+                dapan.style.display = "none";
+            }
+        }
+    });
     // Ẩn hết tất cả các thẻ ban đầu
     for(var i=0;i<5;i++){
             chonloaian(i);
