@@ -18,6 +18,8 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/bootstrap-switch.css',
+        'css/bootstrap-switch.min.css',
         'css/site.css',
         'css/ihover.css',
         'css/webvowl.app.css',
@@ -26,8 +28,7 @@ class AppAsset extends AssetBundle
         'css/khungchinh.css',
         'css/fullscreen.css',
         'css/languages.min.css',
-        'css/bootstrap-switch.css',
-        'css/bootstrap-switch.min.css'
+        
     ];
     public $js = [
         'js/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
