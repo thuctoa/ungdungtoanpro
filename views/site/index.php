@@ -253,7 +253,7 @@
     
     <div class="row ly-thuyet-thuat-toan">
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
+            <div class="panel panel-default " style=" background: whitesmoke;">
                 <div class="panel-heading" id="panel-heading" >
                     <ul class="list-inline panel-actions">
                         <p class="tieu-de-khung pull-left"> 
@@ -273,7 +273,7 @@
         </div>
         
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style="//background: rgba(0,0,0, 0.2);">
+            <div class="panel panel-default " style=" background: whitesmoke; color: #222">
                 <div class="panel-heading" id="panel-heading" >
                     <ul class="list-inline panel-actions">
                         <p class="tieu-de-khung pull-left"> 
