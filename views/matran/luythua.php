@@ -1,3 +1,4 @@
+<div id="loi-giai">
 <strong><p><u>Giải:</u></p></strong>
 <p>Gọi ma trận đầu vào là ma trận $A$ vậy </p>
 $$
@@ -99,6 +100,16 @@ $$
     =
     <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
 $$
+</div>
+<div id="dap-an">
+    <p> Kết quả </p> 
+$$ 
+    <?= $Thuvienchung->hienthimatran($matran,'pmatrix')?>
+    ^{<?=$somu?>}
+    =
+    <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
+$$
+</div>
 <?php
         }else if($somu<=2){ 
             ?>
@@ -111,6 +122,16 @@ $$
     = 
     <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
 $$
+</div>
+<div id="dap-an">
+    <p> Kết quả </p> 
+$$ 
+    <?= $Thuvienchung->hienthimatran($matran,'pmatrix')?>
+        ^{<?=$somu?>}
+    = 
+    <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
+$$
+</div>
 <?php
         }else{
 ?>
@@ -178,6 +199,17 @@ $
     =
     <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
 $
+</div>
+<div id="dap-an">
+    <p> Kết quả là </p> 
+
+$ 
+    <?= $Thuvienchung->hienthimatran($matran,'pmatrix')?>
+        ^{<?=$somu?>}
+    =
+    <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
+$
+</div>
 <?php
         }
     }

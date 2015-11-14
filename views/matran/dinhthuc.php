@@ -1,3 +1,4 @@
+<div id="loi-giai">
 <?php 
     use app\components\Matran;
     $a=new Matran($matran ,$hang, $cot);
@@ -127,6 +128,16 @@
                     'vmatrix')?> = <?=$a->sodep($dinhthuc)?>
         $$
         </p>
+</div>
+<div id="dap-an">
+    <p><strong><?=Yii::t('app','Kết quả ')?></strong>
+        $$
+            det(A) = <?=$a->hienthimatran($matran,
+                    'vmatrix')?> = <?=$a->sodep($dinhthuc)?>
+        $$
+        </p>
+        </div>
+</div>
 <?php
         }else{
             $phuhopthotho=[];// Chọn hàng
@@ -202,19 +213,56 @@
             = <?=$a->sodep($dinhthuc)?>
         $$
         </p>
+        </div>
+<div id="dap-an">
+    <p><strong><?=Yii::t('app','Kết quả ')?></strong>
+        $$
+            det(A) = 
+            <?=  $a->hienthimatran($matran,'vmatrix')?> 
+            = <?=$a->sodep($dinhthuc)?>
+        $$
+        </p>
+</div>
 <?php
         }
     }else{
         if($hang==$cot){
             if($hang==1)
-            {
-                echo $matran[0][0];
+            { 
+ 
+?>
+         <p><strong><?=Yii::t('app','Kết quả ')?></strong>
+       $$ 
+                det\{<?= $a->hienthimatran($matran,'matrix');?>\}
+                = <?=$matran[0][0]?>
+            $$
+        </p>
+         </div>
+<div id="dap-an">
+    <p><strong><?=Yii::t('app','Kết quả ')?></strong>
+       $$ 
+                det\{<?= $a->hienthimatran($matran,'matrix');?>\}
+                = <?=$matran[0][0]?>
+            $$
+        </p>
+</div>
+<?php
+               
             }else{
 ?>
             $$ 
                 <?= $a->hienthimatran($matran,'vmatrix');?>
                 = <?=$a->sodep($dinhthuc)?>
             $$
+             </div>
+<div id="dap-an">
+    <p><strong><?=Yii::t('app','Kết quả ')?></strong>
+       $$ 
+                <?= $a->hienthimatran($matran,'vmatrix');?>
+                = <?=$a->sodep($dinhthuc)?>
+            $$
+        </p>
+</div>
 <?php 
             }
         }

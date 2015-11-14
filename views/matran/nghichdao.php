@@ -1,3 +1,4 @@
+<div id="loi-giai">
 <?php 
     $dinhthucmu=-1;
     $ketqua='';
@@ -111,13 +112,24 @@
             ?>
         = <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
     $$
-
+</div>
+<div id ="dap-an">
+     <?=Yii::t('app','Kết quả')?> </strong>
+    $$
+    A^{−1}= <?= $Thuvienchung->hienthimatran($ketqua,'pmatrix');?>
+    $$
+</div>
 <?php
         }else{
 ?>
         Vì đây là ma trận cấp 1 nên nó là một số, vậy nghịch đảo của ma trận,
         cũng là nghịch đảo của một số nên kết quả là: <br>
            $$ (<?=$matran[0][0]?>)^{-1} = <?=$ketqua?>$$
+</div>
+<div id="dap-an">
+    <p> Kết quả </p>
+           $$ (<?=$matran[0][0]?>)^{-1} = <?=$ketqua?>$$
+</div>
 <?php
         }
     }

@@ -295,6 +295,8 @@ function giai_matran(loaigiai){
                 }else{
                     document.getElementById('noi-dung-dau-ra').innerHTML='loi roi';
                 }
+                hienthiketqua();
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             }
             if(xmlhttp.status==500){
                 alert('Lỗi máy chủ không thực thi được.');
@@ -309,7 +311,7 @@ function giai_matran(loaigiai){
                 +"&somu=" + somu + matran, false);
         xmlhttp.send();
     }
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    
 }
 
 function luupdf(idluu){

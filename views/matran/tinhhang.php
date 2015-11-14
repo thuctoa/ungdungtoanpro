@@ -1,3 +1,4 @@
+<div id="loi-giai">
 <?php
     use app\components\Matran;
     $a= new Matran($matran, $hang, $cot);
@@ -54,6 +55,16 @@
         \end{Bmatrix}
         =<?=$a->caphangdequy?>
     $$
+</div>
+<div id="dap-an">
+     <p>Kết quả</p>
+    $$
+        rank \begin{Bmatrix}
+        <?=$a->hienthi('pmatrix')?>
+        \end{Bmatrix}
+        =<?=$a->caphangdequy?>
+    $$
+</div>
     <?php
     }else{
     ?>
@@ -62,6 +73,13 @@
           A = <?=$a->hienthi('pmatrix')?>
         $$
         <p> Do $A$ là ma trận $O$ nên theo quy ước hạng của nó bằng $0$.
+            </div>
+        <div id="dap-an">
+            <p>Kết quả</p>
+            $$
+            rank\begin{Bmatrix}<?=$a->hienthi('pmatrix')?>\end{Bmatrix}=0
+            $$
+        </div>
     <?php
     }
     ?>
