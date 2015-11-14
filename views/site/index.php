@@ -210,7 +210,7 @@
             </div>
         </div>
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style=" background: whitesmoke;">
+            <div class="panel panel-default " style=" //background: whitesmoke;">
                 <div class="panel-heading " id="panel-heading" >
                     <ul class="list-inline panel-actions">
                         <p class="tieu-de-khung pull-left"> 
@@ -218,18 +218,6 @@
                         </p>
                         <li><a href="#" id="dau-ra-fullscreen" role="button" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
                     </ul>
-                </div>
-                
-                <div class="xem-loi-giai text-center" title="<?=Yii::t('app','Xem lời giải')?>">
-                    <input  type="checkbox"
-                            data-on-text="<?=Yii::t('app','Lời&nbspgiải')?>"
-                            data-off-text="<?=Yii::t('app','Kết&nbspquả')?>"
-                            data-size="normal"
-                            id="xem-loi-giai" name="my-checkbox" >
-                </div>
-                <div class="panel-body" id="dau-ra">
-                    <div id="noi-dung-dau-ra">
-                    </div>
                 </div>
                 <div class="btn-toolbar " role="toolbar" aria-label="...">
                     <div class="btn-group pull-right" role="group" aria-label="...">
@@ -246,6 +234,18 @@
                         </button> 
                     </div>-->
                 </div>
+                <div class="panel-body" id="dau-ra">
+                    <div id="noi-dung-dau-ra">
+                    </div>
+                </div>
+                <div class="xem-loi-giai " title="<?=Yii::t('app','Xem lời giải')?>">
+                    <input  type="checkbox"
+                            data-on-text="<?=Yii::t('app','Lời&nbspgiải')?>"
+                            data-off-text="<?=Yii::t('app','Kết&nbspquả')?>"
+                            data-size="normal"
+                            id="xem-loi-giai" name="my-checkbox" >
+                </div>
+                
             </div>
         </div>
     </div>
@@ -253,7 +253,7 @@
     
     <div class="row ly-thuyet-thuat-toan">
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style=" background: whitesmoke;">
+            <div class="panel panel-default " style=" background: #f6f7f8;">
                 <div class="panel-heading" id="panel-heading" >
                     <ul class="list-inline panel-actions">
                         <p class="tieu-de-khung pull-left"> 
@@ -273,7 +273,7 @@
         </div>
         
         <div class="col-lg-6 dinh-khung ">
-            <div class="panel panel-default " style=" background: whitesmoke; color: #222">
+            <div class="panel panel-default " style=" background: #f6f7f8;">
                 <div class="panel-heading" id="panel-heading" >
                     <ul class="list-inline panel-actions">
                         <p class="tieu-de-khung pull-left"> 
