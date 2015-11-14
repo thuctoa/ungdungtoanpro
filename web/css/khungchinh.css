@@ -1,6 +1,6 @@
 body{
     font: normal 13px arial,sans-serif;
-    background: url(../img/bg-site.png);
+    //background: url(../img/dakhoi.jpg);
 }
 .wrap{
     padding-bottom: 50px;
@@ -18,12 +18,12 @@ body{
     overflow: auto;
 }
 #ly-thuyet{
-    //background: url(../img/previewHD.png);
+    //background: url(../img/bg-site.png);
     height: 55vh;
     overflow: auto;
 }
 #thuat-toan{
-   // background: url(../img/previewHD.png);
+   // background: url(../img/bg-site.png);
     height: 55vh;
     overflow: auto;
 }
