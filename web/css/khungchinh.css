@@ -205,6 +205,6 @@ button{
     margin: 100px;
 }
 .nut-ma-tran>.input-group,.chon-loai-4>.input-group{
-    border: 1px solid red;
+    border: 1px solid #4d90fe;
     border-radius: 4px;
 }
