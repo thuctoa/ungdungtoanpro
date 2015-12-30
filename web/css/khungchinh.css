@@ -204,7 +204,7 @@ button{
 .inpdf{
     margin: 100px;
 }
-.input-group{
+.nut-ma-tran>.input-group,.chon-loai-4>.input-group{
     border: 1px solid red;
     border-radius: 4px;
 }
