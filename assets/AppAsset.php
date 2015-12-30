@@ -37,7 +37,8 @@ class AppAsset extends AssetBundle
         'js/jspdf.debug.js',
         'js/fullscreen.js',
         'js/bootstrap-switch.js',
-        'js/bootstrap-switch.min.js'
+        'js/bootstrap-switch.min.js',
+      
         
     ];
     public $depends = [

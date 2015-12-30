@@ -34,6 +34,7 @@ class Book extends \yii\db\ActiveRecord
             [['title', 'description'], 'required'],
             [['description'], 'string'],
             [['user_id'], 'integer'],
+           
             [['title'], 'string', 'max' => 64],
             [['isbn'], 'string', 'max' => 32]
         ];
@@ -49,7 +50,8 @@ class Book extends \yii\db\ActiveRecord
             'title' => Yii::t('app', 'Chủ đề'),
             'description' => Yii::t('app', 'Nội dung'),
             'user_id' => Yii::t('app', 'User'),
-            'isbn' => Yii::t('app', 'Loại bài viết'),
+            'isbn' => Yii::t('app', 'Loại bài viết'), 
+            
         ];
     }
 

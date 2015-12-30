@@ -66,7 +66,6 @@ AppAsset::register($this);
             <?php echo \app\components\widgets\LanguageSelector::widget(); ?>
         </div>
         <div class="container">
-           
             <a href="/" class="pull-left text-primary ">&copy; Ứng dụng toán <?= date('Y') ?></a>
             <a href="/site/contact.html" class="pull-right text-primary"><?=Yii::t('app','Tác giả')?>: Nguyễn Thế Thức - 
                 <?=Yii::t('app','Địa chỉ Email')?>: thucfami@gmail.com - 

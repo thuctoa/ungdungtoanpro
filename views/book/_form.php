@@ -24,6 +24,7 @@ use dosamigos\ckeditor\CKEditor;
             echo $form->field($model, 'isbn')->textInput(['maxlength' => true]);
         }
     ?>
+ 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
